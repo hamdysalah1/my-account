@@ -3,11 +3,11 @@
 import React from 'react';
 
 class ErrorBoundary extends React.Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
-      error: this.props.error || null,
-      errorInfo: this.props.errorInfo || null,
+      error: props.error || null,
+      errorInfo: props.errorInfo || null,
     };
   }
 
