@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import parseISO from 'date-fns/parseISO';
 import styled from 'styled-components';
-import { sharedFormStyles } from '../../../styles/formStyles';
+import { sharedFormStyles } from '../styles/formStyle';
 
 const Input = styled.input`
   ${sharedFormStyles}
@@ -32,4 +33,21 @@ const DateField = ({
   </>
 );
 
+DateField.defaultProps = {
+  value: '',
+  labelText: '',
+  id: '',
+  onChange: () => {},
+};
+
+DateField.propTypes = {
+  value: PropTypes.string,
+  labelText: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  maxDate: PropTypes.string.isRequired,
+  minDate: PropTypes.string.isRequired,
+  id: PropTypes.string,
+  onChange: PropTypes.func,
+  rules: PropTypes.any.isRequired,
+};
 export default DateField;

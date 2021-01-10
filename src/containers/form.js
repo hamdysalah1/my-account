@@ -1,37 +1,38 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
-import Field from './field';
-import styled from 'styled-components';
+import PropType from 'prop-types';
 import { useForm } from 'react-hook-form';
-import { hasErrorMgs } from '../../utils';
-
-const FieldWrap = styled.div`
-  margin-bottom: 30px;
-`;
+import { Field, FieldWrap } from '../components';
+import { hasErrorMgs } from '../utils';
 
 const Form = ({ fields, onSubmit }) => {
   const { register, handleSubmit, errors } = useForm({ mode: 'onChange' });
 
-  const _onSubmit = (data) => {
+  const ــonSubmit = (data) => {
     if (!Object.keys(errors).length) {
-      onSubmit();
+      onSubmit(data);
     }
   };
   return (
-    <form onSubmit={handleSubmit(_onSubmit)}>
+    <form onSubmit={handleSubmit(ــonSubmit)}>
       {fields.map((field, key) => (
-        <FieldWrap key={`${field.name}_${key}`}>
+        <FieldWrap key={`${field.name}`}>
           <Field
+            // eslint-disable-next-line react/jsx-props-no-spreading
             {...field}
-            rules={register({
-              required: 'Required',
-            })}
+            rules={register(...field.validationRules)}
           />
-          {hasErrorMgs(field.name, errors)}
+          {errors && hasErrorMgs(field.name, errors)}
         </FieldWrap>
       ))}
       <button type="submit"> submit </button>
     </form>
   );
+};
+
+Form.propTypes = {
+  onSubmit: PropType.func.isRequired,
+  fields: PropType.array.isRequired,
 };
 
 export default Form;

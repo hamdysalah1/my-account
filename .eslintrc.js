@@ -32,5 +32,6 @@ module.exports = {
     'class-methods-use-this': 'off',
     'no-named-as-default': 'off',
     'react/jsx-one-expression-per-line': 'off',
+    'react/forbid-prop-types': 'off',
   },
 };

@@ -1,4 +1,5 @@
-/* eslint-disable import/prefer-default-export */
 import Card from './card/card';
+import Field from './form/field';
+import { FieldWrap } from './form/styles/formStyle';
 
-export { Card };
+export { Card, Field, FieldWrap };
