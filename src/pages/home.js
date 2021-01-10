@@ -1,15 +1,19 @@
 import React from 'react';
-import { Card } from '../components';
-import { useFetchData } from '../hooks';
 
-const Home = () => {
-  const user = useFetchData({
-    url: 'https://jsonplaceholder.typicode.com/posts',
-  });
+import { Responsive } from '../helper';
 
-  if (user.loading) {
-    return <div> loading </div>;
-  }
-  return 'Hello';
-};
+const Home = () => (
+  <>
+    <Responsive>
+      {(r) => (
+        <>
+          {r.mobile && <h1> Mobile </h1>}
+          {r.tablet && <h1> Tablet </h1>}
+          {r.desktop && <h1> Desktop </h1>}
+        </>
+      )}
+    </Responsive>
+    <h1> Hello </h1>
+  </>
+);
 export default Home;
