@@ -16,22 +16,20 @@ const DateField = ({
   minDate,
   maxDate,
   rules,
-}) => {
-  return (
-    <>
-      <label htmlFor={id}> {labelText} </label>
-      <Input
-        type="date"
-        name={name}
-        id={id}
-        defaultValue={value}
-        onChange={onChange}
-        minDate={minDate && parseISO(minDate)}
-        maxDate={maxDate && parseISO(maxDate)}
-        ref={rules}
-      />
-    </>
-  );
-};
+}) => (
+  <>
+    <label htmlFor={id}> {labelText} </label>
+    <Input
+      type="date"
+      name={name}
+      id={id}
+      defaultValue={value}
+      onChange={onChange}
+      minDate={minDate && parseISO(minDate)}
+      maxDate={maxDate && parseISO(maxDate)}
+      ref={rules}
+    />
+  </>
+);
 
 export default DateField;

@@ -12,53 +12,51 @@ const Field = ({
   maxDate,
   rules,
   title,
-}) => {
-  return (
-    <>
-      {type === 'text' && (
-        <TextField
-          value={value}
-          name={name}
-          id={id}
-          labelText={title}
-          onChange={onChange}
-          rules={rules}
-        />
-      )}
-      {type === 'select' && (
-        <SelectField
-          value={value}
-          name={name}
-          id={id}
-          labelText={title}
-          onChange={onChange}
-          rules={rules}
-          options={options}
-        />
-      )}
-      {type === 'textarea' && (
-        <TextareaField
-          value={value}
-          name={name}
-          id={id}
-          labelText={title}
-          onChange={onChange}
-          rules={rules}
-        />
-      )}
-      {type === 'date' && (
-        <DateField
-          value={value}
-          name={name}
-          id={id}
-          labelText={title}
-          onChange={onChange}
-          rules={rules}
-          minDate={minDate}
-          maxDate={maxDate}
-        />
-      )}
-    </>
-  );
-};
+}) => (
+  <>
+    {type === 'text' && (
+      <TextField
+        value={value}
+        name={name}
+        id={id}
+        labelText={title}
+        onChange={onChange}
+        rules={rules}
+      />
+    )}
+    {type === 'select' && (
+      <SelectField
+        value={value}
+        name={name}
+        id={id}
+        labelText={title}
+        onChange={onChange}
+        rules={rules}
+        options={options}
+      />
+    )}
+    {type === 'textarea' && (
+      <TextareaField
+        value={value}
+        name={name}
+        id={id}
+        labelText={title}
+        onChange={onChange}
+        rules={rules}
+      />
+    )}
+    {type === 'date' && (
+      <DateField
+        value={value}
+        name={name}
+        id={id}
+        labelText={title}
+        onChange={onChange}
+        rules={rules}
+        minDate={minDate}
+        maxDate={maxDate}
+      />
+    )}
+  </>
+);
 export default Field;

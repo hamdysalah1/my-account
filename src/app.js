@@ -2,8 +2,7 @@
 /* eslint-disable react/no-children-prop */
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from '../pages/home';
-
+import Home from './pages/home';
 import ErrorBoundary from './errorBoundary';
 
 const App = (props) => (

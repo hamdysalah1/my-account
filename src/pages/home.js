@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card } from '../components';
 import { useFetchData } from '../hooks';
-import Test from '../components/test/test';
 
 const Home = () => {
   const user = useFetchData({
@@ -11,6 +10,6 @@ const Home = () => {
   if (user.loading) {
     return <div> loading </div>;
   }
-  return <Test>sssss</Test>;
+  return 'Hello';
 };
 export default Home;

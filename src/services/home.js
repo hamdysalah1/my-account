@@ -1,6 +1,6 @@
 import { makeRequest } from '../utils';
 
-export const loginAndSignupService = {
+export const home = {
   GET_TOKEN: async () => {
     try {
       const response = await makeRequest('');
