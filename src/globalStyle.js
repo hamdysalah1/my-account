@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+// eslint-disable-next-line import/no-unresolved
 import normalize from 'normalize.css';
 
 const isHome = window.location.pathname === '/';
