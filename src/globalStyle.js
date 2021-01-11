@@ -11,7 +11,8 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: 'Inter', sans-serif;
-    font-weight: 400;
+    font-weight: 300;
+    font-size: 22px;
     ${
       isHome
         ? `

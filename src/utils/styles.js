@@ -13,4 +13,8 @@ export const Rounded = styled.div`
   font-weight: 800;
 `;
 
-export const dd = '';
+export const Badge = styled.span`
+  border-radius: 8px;
+  background-color: ${(props) => props.backgroundColor};
+  padding: 10px 20px;
+`;

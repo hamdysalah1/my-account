@@ -7,7 +7,7 @@ const Card = ({ children }) => <Container> {children} </Container>;
 Card.Content = ({ children }) => <Content> {children} </Content>;
 
 Card.Content.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.any.isRequired,
 };
 Card.propTypes = {
   children: PropTypes.element.isRequired,
