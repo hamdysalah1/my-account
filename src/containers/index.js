@@ -1,4 +1,4 @@
-import App from './app';
-import ErrorBoundary from './errorBoundary';
+import HomeContainer from './home';
+import Form from './form';
 
-export { App, ErrorBoundary };
+export { HomeContainer, Form };

@@ -1,8 +1,6 @@
 import React from 'react';
-import loginJson from '../fixtures/loginForm.json';
-import Form from '../containers/form';
-
-import { Responsive } from '../helper';
+import { Header, Footer } from '../components';
+import { HomeContainer } from '../containers';
 
 const Home = () => {
   const onSubmit = (data) => {
@@ -10,7 +8,9 @@ const Home = () => {
   };
   return (
     <>
-      <Form fields={loginJson} onSubmit={onSubmit} />
+      <Header />
+      <HomeContainer />
+      <Footer />
     </>
   );
 };
