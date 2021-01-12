@@ -9,7 +9,6 @@ const Input = styled.input`
 
 const TextField = ({ value, name, id, labelText, onChange, rules }) => (
   <>
-    <label htmlFor={id}> {labelText} </label>
     <Input
       type="text"
       name={name}
@@ -17,7 +16,9 @@ const TextField = ({ value, name, id, labelText, onChange, rules }) => (
       defaultValue={value}
       onChange={onChange}
       ref={rules}
+      required
     />
+    <label htmlFor={id}> {labelText} </label>
   </>
 );
 
