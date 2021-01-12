@@ -27,5 +27,7 @@ export const i18n = {
     FOOTER_LINKS_DISCLAIMER: 'Disclaimer',
     FOOTER_LINKS_CONTACT_COMPLAINTS: 'Contact Us / Complaints',
     FOOTER_LINKS_ABOUT: 'About Us',
+    LOGIN_WITH_SOCIAL: 'Login With social network',
+    HOME_CONTACT_NUMBER: 'Call us: 800 266 7273',
   },
 };
