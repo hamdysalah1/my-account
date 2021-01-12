@@ -1,2 +1,11 @@
 node_modules
+npm-debug.log
+.DS_Store
+.idea
 .eslintcache
+.cache
+.vscode
+.eslint-release-info.json
+.nyc_output
+yarn.lock
+package-lock.json
