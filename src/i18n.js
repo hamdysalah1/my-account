@@ -1,6 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 export const i18n = {
   ar: {
+    MENU_TITLE: 'القائمة',
+    LANG: 'English',
     HOME_PAGE_TITLE_TEXT:
       'احصل علي قسيمه باكثر من 1,000 درهم علي كل بوليصه تامين السيارات',
     HOME_PAGE_P_TEXT:
@@ -16,6 +18,8 @@ export const i18n = {
     FOOTER_COPY_RIGHT: '  ٢٠٢٠ يلا كومبير. جميع الحقوق محفوظة © ',
   },
   en: {
+    MENU_TITLE: 'MENU',
+    LANG: 'العربية',
     HOME_PAGE_TITLE_TEXT:
       'Get over AED 1,000 in vouchers with every car insurance policy',
     HOME_PAGE_P_TEXT:
