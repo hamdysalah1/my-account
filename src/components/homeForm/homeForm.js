@@ -25,27 +25,6 @@ import {
 
 const HomeForm = ({ formTitle, buttonText, buttonOnClick, children }) => (
   <Card>
-<<<<<<< HEAD
-    {/* <FormWrap>
-      <Card.Content>
-        <Header>
-          <h3>
-            <T id={formTitle} />
-          </h3>
-          <button type="button" onClick={() => buttonOnClick}>
-            <T id={buttonText} />
-          </button>
-        </Header>
-      </Card.Content>
-    </FormWrap>
-    <Footer>
-      <Card.Content>
-        <Rounded backgroundColor="#000" color="#fff" width="60px" height="60px">
-          <T id="HOME_FORM_OR" />
-        </Rounded>
-      </Card.Content>
-    </Footer> */}
-=======
     <>
       <FormWrap>
         <Card.Content>
@@ -111,7 +90,6 @@ const HomeForm = ({ formTitle, buttonText, buttonOnClick, children }) => (
         </Card.Content>
       </Footer>
     </>
->>>>>>> 3763f4c43e4307b51d1fcccf1a5b2745a8259e6f
   </Card>
 );
 

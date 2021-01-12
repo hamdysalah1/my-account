@@ -120,9 +120,6 @@ export const RememberMe = styled.div`
   display: flex;
   align-items: center;
 
-<<<<<<< HEAD
-export const dd = '';
-=======
   & > label {
     margin-left: 18px;
     @media (max-width: ${xsMax}px) {
@@ -130,4 +127,3 @@ export const dd = '';
     }
   }
 `;
->>>>>>> 3763f4c43e4307b51d1fcccf1a5b2745a8259e6f
