@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header, Footer } from '../components';
 import { HomeContainer } from '../containers';
-import loginFields from '../fixtures/loginForm.json';
+import loginFields from '../fixtures/loginForm';
 
 const Home = () => {
   console.log('loginFields', typeof loginFields);

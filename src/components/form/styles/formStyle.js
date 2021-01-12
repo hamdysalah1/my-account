@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components/macro';
-import { LIGHT_GRAY_COLOR } from '../../../constants';
 
 export const sharedFormStyles = css`
   border: none;
@@ -32,4 +31,11 @@ export const FieldWrap = styled.div`
     font-size: 16px;
     transition: all 0.25s;
   }
+`;
+
+export const ErrorMsg = styled.p`
+  color: red;
+  margin-bottom: 0;
+  margin-top: 5px;
+  font-size: 15px;
 `;
