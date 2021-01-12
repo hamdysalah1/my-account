@@ -10,7 +10,11 @@ import {
   SocialBtnWrap,
   SocialWrap,
   Contact,
+  ForgotPassword,
+  ActionsWrap,
+  RememberMe,
 } from './styles/homeFormStyle';
+import { CheckboxField } from '../form/fields';
 import { Rounded, Badge } from '../../utils';
 import {
   FacebookIcon,
@@ -89,6 +93,14 @@ const HomeForm = ({ formTitle, buttonText, buttonOnClick, children }) => (
   </Card>
 );
 
+HomeForm.Actions = () => (
+  <ActionsWrap>
+    <RememberMe>
+      <CheckboxField labelText="Remember me" />
+    </RememberMe>
+    <ForgotPassword href="#"> Forgot Password? </ForgotPassword>
+  </ActionsWrap>
+);
 HomeForm.propTypes = {
   formTitle: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
