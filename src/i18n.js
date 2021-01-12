@@ -13,6 +13,7 @@ export const i18n = {
     FOOTER_LINKS_DISCLAIMER: 'بيان إخلاء المسؤلية',
     FOOTER_LINKS_CONTACT_COMPLAINTS: 'للاتصال بنا / الشكاوى',
     FOOTER_LINKS_ABOUT: 'نبذة عنا',
+    FOOTER_COPY_RIGHT: '  ٢٠٢٠ يلا كومبير. جميع الحقوق محفوظة © ',
   },
   en: {
     HOME_PAGE_TITLE_TEXT:
@@ -27,7 +28,7 @@ export const i18n = {
     FOOTER_LINKS_DISCLAIMER: 'Disclaimer',
     FOOTER_LINKS_CONTACT_COMPLAINTS: 'Contact Us / Complaints',
     FOOTER_LINKS_ABOUT: 'About Us',
+    FOOTER_COPY_RIGHT: '© 2020 yallacompare. All Rights Reserved.',
     LOGIN_WITH_SOCIAL: 'Login With social network',
-    HOME_CONTACT_NUMBER: 'Call us: 800 266 7273',
   },
 };
