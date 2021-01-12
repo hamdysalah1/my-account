@@ -1,12 +1,6 @@
 import React from 'react';
-// eslint-disable-next-line no-unused-vars
-import loginJson from '../fixtures/loginForm.json';
-// eslint-disable-next-line no-unused-vars
-import Form from '../containers/form';
-import Header from '../components/common/header/header';
-import Footer from '../components/common/footer/footer';
-// eslint-disable-next-line no-unused-vars
-import { Responsive } from '../helper';
+import { Header, Footer } from '../components';
+import { HomeContainer } from '../containers';
 
 const Home = () => {
   // eslint-disable-next-line no-unused-vars
@@ -15,8 +9,8 @@ const Home = () => {
   };
   return (
     <>
-      {/* <Form fields={loginJson} onSubmit={onSubmit} /> */}
       <Header />
+      <HomeContainer />
       <Footer />
     </>
   );

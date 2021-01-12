@@ -2,7 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 // eslint-disable-next-line import/no-unresolved
 import normalize from 'normalize.css';
 
-const isHome = window.location.pathname === '/';
+const isHome =
+  window.location.pathname === '/en' || window.location.pathname === '/ar';
 const GlobalStyle = createGlobalStyle`
   ${normalize}
   * {
@@ -11,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: 'Inter', sans-serif;
+    font-weight: 400;
     ${
       isHome
         ? `

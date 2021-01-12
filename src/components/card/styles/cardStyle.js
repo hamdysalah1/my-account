@@ -1,9 +1,11 @@
-import css from 'styled-components/macro';
+import styled from 'styled-components/macro';
+import { BORDER_RADIUS } from '../../../constants';
 
-export const Title = css.h1`
-  color: red
+export const Container = styled.div`
+  border-radius: ${BORDER_RADIUS};
+  overflow: hidden;
 `;
 
-export const Details = css.p`
-  color: gray
+export const Content = styled.div`
+  padding: 30px;
 `;
