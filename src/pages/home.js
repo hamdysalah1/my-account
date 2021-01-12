@@ -13,7 +13,9 @@ const Home = () => {
       <Header />
       <HomeContainer
         formFields={loginFields}
-        buttonOnClick={() => {}}
+        buttonOnClick={() => {
+          console.log('Clicked');
+        }}
         buttonText="SIGN_UP_TEXT"
         formTitle="LOGIN_TEXT"
         onSubmit={() => {}}

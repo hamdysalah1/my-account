@@ -5,5 +5,6 @@ import Footer from './layout/footer/footer';
 import Header from './layout/header/header';
 import Hero from './hero/hero';
 import HomeForm from './homeForm/homeForm';
+import Button from './button/button';
 
-export { Card, Field, FieldWrap, Footer, Header, Hero, HomeForm };
+export { Card, Field, FieldWrap, Footer, Header, Hero, HomeForm, Button };
