@@ -5,17 +5,17 @@ import { useForm } from 'react-hook-form';
 import { Field, FieldWrap } from '../components';
 import { hasErrorMgs } from '../utils';
 
-const Form = ({ fields, onSubmit }) => {
+const Form = ({ fields, onSubmit, afterLoop }) => {
   const { register, handleSubmit, errors } = useForm({ mode: 'onChange' });
 
-  const ــonSubmit = (data) => {
+  const formSubmit = (data) => {
     if (!Object.keys(errors).length) {
       onSubmit(data);
     }
   };
   return (
-    <form onSubmit={handleSubmit(ــonSubmit)}>
-      {fields.map((field, key) => (
+    <form onSubmit={handleSubmit(formSubmit)}>
+      {fields.map((field) => (
         <FieldWrap key={`${field.name}`}>
           <Field
             // eslint-disable-next-line react/jsx-props-no-spreading
@@ -25,14 +25,19 @@ const Form = ({ fields, onSubmit }) => {
           {errors && hasErrorMgs(field.name, errors)}
         </FieldWrap>
       ))}
+      {afterLoop}
       <button type="submit"> submit </button>
     </form>
   );
 };
 
+Form.defaultProps = {
+  afterLoop: '',
+};
 Form.propTypes = {
   onSubmit: PropType.func.isRequired,
   fields: PropType.array.isRequired,
+  afterLoop: PropType.any,
 };
 
 export default Form;
