@@ -2,7 +2,7 @@
 import React from 'react';
 import PropType from 'prop-types';
 import { useForm } from 'react-hook-form';
-import { Field, FieldWrap } from '../components';
+import { Field, FieldWrap, Button } from '../components';
 import { hasErrorMgs } from '../utils';
 
 const Form = ({ fields, onSubmit, afterLoop }) => {
@@ -26,7 +26,9 @@ const Form = ({ fields, onSubmit, afterLoop }) => {
         </FieldWrap>
       ))}
       {afterLoop}
-      <button type="submit"> submit </button>
+      <Button.Primary type="submit" fullWidth="true">
+        submit
+      </Button.Primary>
     </form>
   );
 };
