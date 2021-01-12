@@ -13,7 +13,9 @@ import {
   ForgotPassword,
   ActionsWrap,
   RememberMe,
+  ChildrenWrap,
 } from './styles/homeFormStyle';
+import Button from '../button/button';
 import { CheckboxField } from '../form/fields';
 import { Rounded, Badge } from '../../utils';
 import {
@@ -32,11 +34,15 @@ const HomeForm = ({ formTitle, buttonText, buttonOnClick, children }) => (
             <h3>
               <T id={formTitle} />
             </h3>
-            <button type="button" onClick={() => buttonOnClick}>
+            <Button.Secondary
+              type="button"
+              fontSize="14"
+              onClick={buttonOnClick}
+            >
               <T id={buttonText} />
-            </button>
+            </Button.Secondary>
           </Header>
-          {children}
+          <ChildrenWrap>{children}</ChildrenWrap>
         </Card.Content>
       </FormWrap>
       <Footer>
@@ -96,7 +102,7 @@ const HomeForm = ({ formTitle, buttonText, buttonOnClick, children }) => (
 HomeForm.Actions = () => (
   <ActionsWrap>
     <RememberMe>
-      <CheckboxField labelText="Remember me" />
+      <CheckboxField labelText="Remember me" name="remember" />
     </RememberMe>
     <ForgotPassword href="#"> Forgot Password? </ForgotPassword>
   </ActionsWrap>

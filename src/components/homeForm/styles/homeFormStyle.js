@@ -9,6 +9,7 @@ import {
 export const Header = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 export const FormWrap = styled.div`
   background-color: ${LIGHT_GRAY_COLOR};
@@ -111,6 +112,7 @@ export const ActionsWrap = styled.div`
   justify-content: space-between;
   align-items: center;
   font-size: 16px;
+  margin-bottom: 16px;
 
   @media (max-width: ${xsMax}px) {
     font-size: 14px;
@@ -126,4 +128,9 @@ export const RememberMe = styled.div`
       margin-left: 10px;
     }
   }
+`;
+
+export const ChildrenWrap = styled.div`
+  margin-top: 40px;
+  margin-bottom: 40px;
 `;
