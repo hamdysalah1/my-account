@@ -21,7 +21,7 @@ function HomeContainer({
               <Row alignItems="center">
                 <Col md={6} xs={12}>
                   <Hero.Title title="HOME_PAGE_TITLE_TEXT" />
-                  <Hero.Paragraph paragraph="HOME_PAGE_TITLE_TEXT" />
+                  <Hero.Paragraph paragraph="HOME_PAGE_P_TEXT" />
                 </Col>
                 <Col md={6} xs={12}>
                   <HomeForm

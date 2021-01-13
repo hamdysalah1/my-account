@@ -58,21 +58,21 @@ Button.propTypes = {
   children: PropTypes.element.isRequired,
 };
 Button.Primary.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.any.isRequired,
   onClick: PropTypes.func,
   type: PropTypes.string,
   fullWidth: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   fontSize: PropTypes.string,
 };
 Button.Secondary.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.any.isRequired,
   onClick: PropTypes.func,
   type: PropTypes.string,
   fullWidth: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   fontSize: PropTypes.string,
 };
 Button.Default.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.any.isRequired,
   onClick: PropTypes.func,
   type: PropTypes.string,
   fullWidth: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),

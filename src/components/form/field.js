@@ -25,6 +25,16 @@ const Field = ({
         rules={rules}
       />
     )}
+    {type === 'password' && (
+      <TextField
+        value={value}
+        name={name}
+        id={id}
+        labelText={title}
+        onChange={onChange}
+        rules={rules}
+      />
+    )}
     {type === 'select' && (
       <SelectField
         value={value}

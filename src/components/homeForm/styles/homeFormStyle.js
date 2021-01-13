@@ -10,6 +10,10 @@ export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  & > h3 {
+    margin: 0;
+  }
 `;
 export const FormWrap = styled.div`
   background-color: ${LIGHT_GRAY_COLOR};
