@@ -1,9 +1,9 @@
 import { makeRequest } from '../utils';
 
-export const home = {
-  GET_TOKEN: async () => {
+export const profile = {
+  GET_TOKEN: async (body) => {
     try {
-      const response = await makeRequest('');
+      const response = await makeRequest('v1/profile/login', 'POST', body);
       return response;
     } catch (error) {
       throw new Error(error);
