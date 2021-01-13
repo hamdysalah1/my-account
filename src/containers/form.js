@@ -2,7 +2,8 @@
 import React from 'react';
 import PropType from 'prop-types';
 import { useForm } from 'react-hook-form';
-import { Field, FieldWrap, Button } from '../components';
+import { Field, FieldWrap, Button, ErrorMsg } from '../components';
+import T from '../components/T';
 import { hasErrorMgs } from '../utils';
 
 const Form = ({ fields, onSubmit, afterLoop }) => {
@@ -20,9 +21,13 @@ const Form = ({ fields, onSubmit, afterLoop }) => {
           <Field
             // eslint-disable-next-line react/jsx-props-no-spreading
             {...field}
-            rules={register(...field.validationRules)}
+            rules={register(field.validationRules)}
           />
-          {errors && hasErrorMgs(field.name, errors)}
+          {errors && (
+            <ErrorMsg>
+              <T id={hasErrorMgs(field.name, errors)} />
+            </ErrorMsg>
+          )}
         </FieldWrap>
       ))}
       {afterLoop}

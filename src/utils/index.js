@@ -1,5 +1,5 @@
 import { makeRequest } from './makeRequest';
-import { hasErrorMgs } from './form';
+import { hasErrorMgs, validate } from './form';
 import { Rounded, Badge } from './styles';
 
-export { makeRequest, hasErrorMgs, Rounded, Badge };
+export { makeRequest, hasErrorMgs, validate, Rounded, Badge };

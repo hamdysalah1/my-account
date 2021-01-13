@@ -7,7 +7,15 @@ const Input = styled.input`
   ${sharedFormStyles};
 `;
 
-const CheckboxField = ({ value, name, id, labelText, onChange, rules }) => (
+const CheckboxField = ({
+  value,
+  name,
+  id,
+  labelText,
+  onChange,
+  rules,
+  width,
+}) => (
   <>
     <Input
       type="checkbox"
@@ -16,6 +24,7 @@ const CheckboxField = ({ value, name, id, labelText, onChange, rules }) => (
       defaultValue={value}
       onChange={onChange}
       ref={rules}
+      width={width}
     />
     <label htmlFor={id}> {labelText} </label>
   </>
@@ -26,6 +35,7 @@ CheckboxField.defaultProps = {
   labelText: '',
   id: '',
   onChange: () => {},
+  width: 'auto',
 };
 
 CheckboxField.propTypes = {
@@ -35,5 +45,6 @@ CheckboxField.propTypes = {
   id: PropTypes.string,
   onChange: PropTypes.func,
   rules: PropTypes.any.isRequired,
+  width: PropTypes.string,
 };
 export default CheckboxField;

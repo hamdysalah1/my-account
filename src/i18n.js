@@ -10,6 +10,9 @@ export const i18n = {
     HOME_FORM_OR: 'او',
     LOGIN_WITH_SOCIAL: 'تسجيل الدخول بواسطه',
     HOME_CONTACT_NUMBER: 'اتصل بنا علي 800 266 7273',
+    INVALID_NAME: 'الاسم غير صالح',
+    REQUIRED: 'مطلوب',
+    INVALID_EMAIL: 'البريد الالكتروني غير صالح',
   },
   en: {
     HOME_PAGE_TITLE_TEXT:
@@ -21,5 +24,8 @@ export const i18n = {
     HOME_FORM_OR: 'OR',
     LOGIN_WITH_SOCIAL: 'Login With social network',
     HOME_CONTACT_NUMBER: 'Call us: 800 266 7273',
+    INVALID_NAME: 'Invalid Name',
+    REQUIRED: 'Required',
+    INVALID_EMAIL: 'Invalid Email',
   },
 };

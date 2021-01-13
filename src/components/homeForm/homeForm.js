@@ -102,7 +102,12 @@ const HomeForm = ({ formTitle, buttonText, buttonOnClick, children }) => (
 HomeForm.Actions = () => (
   <ActionsWrap>
     <RememberMe>
-      <CheckboxField labelText="Remember me" name="remember" />
+      <CheckboxField
+        labelText="Remember me"
+        name="remember"
+        id="remember"
+        rules={React.createRef()}
+      />
     </RememberMe>
     <ForgotPassword href="#"> Forgot Password? </ForgotPassword>
   </ActionsWrap>
