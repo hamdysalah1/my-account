@@ -2,6 +2,7 @@
 import React from 'react';
 import { Row, Col, Container } from 'thegridsys';
 import styled from 'styled-components';
+// eslint-disable-next-line no-unused-vars
 import Responsive from '../../../helper/responsive';
 import T from '../../T';
 

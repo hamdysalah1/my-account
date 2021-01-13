@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col, Container } from 'thegridsys';
+// eslint-disable-next-line no-unused-vars
 import styled from 'styled-components';
 import YallaLogo from '../../images/YClogo';
 import NotificationIcon from '../../icons/notifications';
