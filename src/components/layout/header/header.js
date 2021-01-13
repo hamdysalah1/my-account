@@ -41,6 +41,12 @@ function Header() {
           <Col xs="9" md="6" alignSelf="center" order="1">
             <YallaLogo />
           </Col>
+          <Col xs="3" md="4" alignSelf="center" order="2">
+            <Menu>
+              <T id="MENU_TITLE" />
+              <MenuIcon />
+            </Menu>
+          </Col>
           <Responsive>
             {(r) => (
               <>

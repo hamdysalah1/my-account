@@ -10,20 +10,17 @@ export const i18n = {
     LOGIN_TEXT: 'تسجيل دخول',
     SIGN_UP_TEXT: 'تسجيل جديد',
     HOME_FORM_OR: 'او',
-<<<<<<< HEAD
     FOOTER_LINKS_TERMS: 'الشروط و الاحكام',
     FOOTER_LINKS_PRIVACY: 'سياسة الخصوصية',
     FOOTER_LINKS_DISCLAIMER: 'بيان إخلاء المسؤلية',
     FOOTER_LINKS_CONTACT_COMPLAINTS: 'للاتصال بنا / الشكاوى',
     FOOTER_LINKS_ABOUT: 'نبذة عنا',
     FOOTER_COPY_RIGHT: '  ٢٠٢٠ يلا كومبير. جميع الحقوق محفوظة © ',
-=======
     LOGIN_WITH_SOCIAL: 'تسجيل الدخول بواسطه',
     HOME_CONTACT_NUMBER: 'اتصل بنا علي 800 266 7273',
     INVALID_NAME: 'الاسم غير صالح',
     REQUIRED: 'مطلوب',
     INVALID_EMAIL: 'البريد الالكتروني غير صالح',
->>>>>>> e30f3c341be1ff1566b127b17511d4a3c419172c
   },
   en: {
     MENU_TITLE: 'MENU',
@@ -42,12 +39,9 @@ export const i18n = {
     FOOTER_LINKS_ABOUT: 'About Us',
     FOOTER_COPY_RIGHT: '© 2020 yallacompare. All Rights Reserved.',
     LOGIN_WITH_SOCIAL: 'Login With social network',
-<<<<<<< HEAD
-=======
     HOME_CONTACT_NUMBER: 'Call us: 800 266 7273',
     INVALID_NAME: 'Invalid Name',
     REQUIRED: 'Required',
     INVALID_EMAIL: 'Invalid Email',
->>>>>>> e30f3c341be1ff1566b127b17511d4a3c419172c
   },
 };
