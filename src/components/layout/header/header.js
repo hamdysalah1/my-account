@@ -1,33 +1,17 @@
 import React from 'react';
 import { Row, Col, Container } from 'thegridsys';
-import styled from 'styled-components/macro';
-import { SECONDARY_COLOR, DEFAULT_COLOR } from '../../../constants';
+import {
+  HeadWrapper,
+  UserName,
+  Language,
+  Menu,
+  Notification,
+} from './styles/headerStyle';
 import { Responsive } from '../../../helper';
 import YallaLogo from '../../images/YClogo';
 import NotificationIcon from '../../icons/notifications';
 import MenuIcon from '../../icons/menu';
 import T from '../../T';
-
-const HeadWrapper = styled.div`
-  margin: 20px 0;
-`;
-const UserName = styled.div`
-  display: inline-block;
-  border-radius: 100%;
-  width: 36px;
-  height: 36px;
-  color: ${DEFAULT_COLOR};
-  background: ${SECONDARY_COLOR};
-  text-align: center;
-  line-height: 36px;
-`;
-const Menu = styled.div`
-  display: inline-block;
-  font-size: 16px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-`;
 
 function Header() {
   return (
@@ -58,10 +42,14 @@ function Header() {
                       justifyContent="space-between"
                     >
                       <Col xs="1" md="3">
-                        <T id="LANG" />
+                        <Language>
+                          <T id="LANG" />
+                        </Language>
                       </Col>
                       <Col xs="1" md="3">
-                        <NotificationIcon />
+                        <Notification>
+                          <NotificationIcon />
+                        </Notification>
                       </Col>
                       <Col xs="1" md="3">
                         <UserName>D</UserName>

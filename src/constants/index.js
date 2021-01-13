@@ -5,6 +5,7 @@ import {
   PRIMARY_COLOR,
   SECONDARY_COLOR,
   DEFAULT_COLOR,
+  BLACK_COLOR,
 } from './style';
 
 export {
@@ -14,4 +15,5 @@ export {
   PRIMARY_COLOR,
   SECONDARY_COLOR,
   DEFAULT_COLOR,
+  BLACK_COLOR,
 };

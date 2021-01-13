@@ -1,27 +1,8 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from 'react';
 import { Row, Col, Container } from 'thegridsys';
-import styled from 'styled-components';
-// eslint-disable-next-line no-unused-vars
-import Responsive from '../../../helper/responsive';
+import { FooterLinks, FooterRights } from './styles/footerStyle';
 import T from '../../T';
-
-const FooterLinks = styled.div`
-  font-weight: bold;
-  text-align: center;
-  a {
-    color: #000;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 40px;
-  }
-`;
-const FooterRights = styled.div`
-  text-align: center;
-  color: #999;
-  font-size: 14px;
-  line-height: 40px;
-`;
 
 function Footer() {
   return (
