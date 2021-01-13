@@ -4,6 +4,7 @@ import {
   LIGHT_GRAY_COLOR,
   PRIMARY_COLOR,
   SECONDARY_COLOR,
+  DEFAULT_COLOR,
 } from './style';
 
 export {
@@ -12,4 +13,5 @@ export {
   LIGHT_GRAY_COLOR,
   PRIMARY_COLOR,
   SECONDARY_COLOR,
+  DEFAULT_COLOR,
 };
