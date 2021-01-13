@@ -2,6 +2,7 @@ import { makeRequest } from '../utils';
 
 export const profile = {
   GET_TOKEN: async (body) => {
+    console.log('get token body', body);
     try {
       const response = await makeRequest('v1/profile/login', 'POST', body);
       return response;

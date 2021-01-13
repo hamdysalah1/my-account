@@ -4,6 +4,7 @@
  * @param {Object} body
  */
 export const makeRequest = (endpoint, method = 'GET', body) => {
+  console.log('makeRequest body', body);
   const reqProps = {};
   if (!endpoint) {
     throw Error('URL is missing');
