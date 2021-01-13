@@ -1,9 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
 import { xsMax } from 'thegridsys/breakPoints';
 import normalize from 'normalize.css';
+import { withRouter } from 'react-router-dom';
 
 const isHome =
-  window.location.pathname === '/en' || window.location.pathname === '/ar';
+  window.location.pathname === '/en/' ||
+  window.location.pathname === '/en' ||
+  window.location.pathname === '/ar' ||
+  window.location.pathname === '/ar/' ||
+  window.location.pathname === '/';
 const GlobalStyle = createGlobalStyle`
   ${normalize}
   * {
@@ -15,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     font-size: 22px;
+    ${({ location }) => location === 'hamdy' && 'overflow: hamdy'}
     ${
       isHome
         ? `
@@ -51,4 +57,4 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export default GlobalStyle;
+export default withRouter(GlobalStyle);

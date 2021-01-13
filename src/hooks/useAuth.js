@@ -7,24 +7,13 @@ const useAuth = () => {
 
   useEffect(() => {
     const listener = () => {
-      // get token from local storage
-      // validate token
-      // return user is it valid
-
-      const authUser = false;
-      if (authUser) {
-        localStorage.setItem('authUser', JSON.stringify(authUser));
-        setUser(authUser);
-      } else {
-        localStorage.removeItem('authUser');
-        setUser(null);
-      }
+      localStorage.setItem('authUser', JSON.stringify(user));
     };
 
-    return () => listener();
-  }, []);
+    return listener();
+  }, [user, setUser]);
 
-  return { user };
+  return [user, setUser];
 };
 
 export default useAuth;

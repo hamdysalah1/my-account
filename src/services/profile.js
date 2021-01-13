@@ -2,7 +2,6 @@ import { makeRequest } from '../utils';
 
 export const profile = {
   GET_TOKEN: async (body) => {
-    console.log('get token body', body);
     try {
       const response = await makeRequest('v1/profile/login', 'POST', body);
       return response;
@@ -10,7 +9,18 @@ export const profile = {
       throw new Error(error);
     }
   },
-
+  SOCIAL_LOGIN: async (body) => {
+    try {
+      const response = await makeRequest(
+        'v1/profile/socialLogin',
+        'POST',
+        body,
+      );
+      return response;
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
   ADD_USER: async (body) => {
     try {
       const response = await makeRequest('', 'POST', body);

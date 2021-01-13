@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DateField, SelectField, TextField, TextareaField } from './fields';
+import {
+  DateField,
+  SelectField,
+  TextField,
+  TextareaField,
+  PasswordField,
+} from './fields';
 
 const Field = ({
   type,
@@ -26,7 +32,7 @@ const Field = ({
       />
     )}
     {type === 'password' && (
-      <TextField
+      <PasswordField
         value={value}
         name={name}
         id={id}
