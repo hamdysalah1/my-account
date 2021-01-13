@@ -6,13 +6,18 @@ import {
   Language,
   Menu,
   Notification,
+  YallaHomeLogoWrapper,
+  YallaLogoWrapper,
 } from './styles/headerStyle';
 import { Responsive } from '../../../helper';
 import YallaLogo from '../../images/YClogo';
+import YallaHomeLogo from '../../images/YChomeLogo';
 import NotificationIcon from '../../icons/notifications';
 import MenuIcon from '../../icons/menu';
 import T from '../../T';
 
+const isHome =
+  window.location.pathname === '/en' || window.location.pathname === '/ar';
 function Header() {
   return (
     <Container>
@@ -23,7 +28,12 @@ function Header() {
           justifyContent="space-between"
         >
           <Col xs="9" md="6" alignSelf="center" order="1">
-            <YallaLogo />
+            <YallaHomeLogoWrapper>
+              <YallaHomeLogo />
+            </YallaHomeLogoWrapper>
+            <YallaLogoWrapper>
+              <YallaLogo />
+            </YallaLogoWrapper>
           </Col>
           <Col xs="3" md="4" alignSelf="center" order="2">
             <Menu>
@@ -41,19 +51,32 @@ function Header() {
                       alignItems="center"
                       justifyContent="space-between"
                     >
-                      <Col xs="1" md="3">
-                        <Language>
-                          <T id="LANG" />
-                        </Language>
-                      </Col>
-                      <Col xs="1" md="3">
-                        <Notification>
-                          <NotificationIcon />
-                        </Notification>
-                      </Col>
-                      <Col xs="1" md="3">
-                        <UserName>D</UserName>
-                      </Col>
+                      {isHome ? (
+                        <>
+                          {' '}
+                          <Col xs="1" md="12">
+                            <Language>
+                              <T id="LANG" />
+                            </Language>
+                          </Col>{' '}
+                        </>
+                      ) : (
+                        <>
+                          <Col xs="1" md="3">
+                            <Language>
+                              <T id="LANG" />
+                            </Language>
+                          </Col>
+                          <Col xs="1" md="3">
+                            <Notification>
+                              <NotificationIcon />
+                            </Notification>
+                          </Col>
+                          <Col xs="1" md="3">
+                            <UserName>D</UserName>
+                          </Col>
+                        </>
+                      )}
                     </Row>
                   </Col>
                 ) : (
