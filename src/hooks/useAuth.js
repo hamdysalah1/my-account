@@ -4,6 +4,8 @@ function reducer(state, action) {
   switch (action.type) {
     case 'LOGIN':
       return { ...action.payload };
+    case 'SIGN_UP':
+      return console.log('SIGN_UP REDUCER');
     default:
       throw new Error();
   }
@@ -25,14 +27,29 @@ const useAuth = () => {
     } else {
       payload = {
         isAuthenticated: false,
-        error: response.message || 'something went wrong',
+        error: response.message || 'SOMETHING_WENT_WRONG',
       };
     }
     dispatch({ type, payload });
     cb(payload);
   };
 
+  useAuth.signUp = async (type, res, cb) => {
+    const response = await res;
+    let payload;
+
+    if (!response.id) {
+      payload = {
+        error: response.message || 'SOMETHING_WENT_WRONG',
+      };
+    }
+
+    dispatch({ type, payload });
+    cb(payload);
+  };
+
   useAuth.isAuthenticated = JSON.parse(localStorage.getItem('authUser'));
+
   return [user, dispatch];
 };
 

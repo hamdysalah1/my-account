@@ -24,7 +24,16 @@ const Form = ({ fields, onSubmit, afterLoop, serverMessage }) => {
             <Field
               // eslint-disable-next-line react/jsx-props-no-spreading
               {...field}
-              rules={register(field.validationRules)}
+              rules={register(
+                field.validationRules.match
+                  ? {
+                      ...field.validationRules,
+                      validate: (value) =>
+                        value === watch(field.validationRules.match.field) ||
+                        field.validationRules.match.message,
+                    }
+                  : field.validationRules,
+              )}
               currentValue={watch(field.name, field.value || '')}
             />
             {errors && (

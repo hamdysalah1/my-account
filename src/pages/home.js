@@ -2,11 +2,11 @@
 import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { Header, Footer } from '../components';
-import { HomeContainer } from '../containers';
+import { AuthContainer } from '../containers';
 import loginFields from '../fixtures/loginForm';
 import { profile } from '../services';
 import { useAuth } from '../hooks';
-import { PROFILE } from '../constants';
+import { PROFILE, SIGN_UP } from '../constants';
 
 const Home = () => {
   const [error, setError] = useState('');
@@ -29,10 +29,10 @@ const Home = () => {
   return (
     <>
       <Header />
-      <HomeContainer
+      <AuthContainer
         formFields={loginFields}
         buttonOnClick={() => {
-          console.log('Clicked');
+          history.push(`/${params.lang}/${SIGN_UP}`);
         }}
         buttonText="SIGN_UP_TEXT"
         formTitle="LOGIN_TEXT"

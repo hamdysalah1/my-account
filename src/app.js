@@ -7,10 +7,9 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
-import Home from './pages/home';
-import Profile from './pages/profile';
+import { Home, Profile, SignUp } from './pages';
 import ErrorBoundary from './errorBoundary';
-import { PROFILE } from './constants/routers';
+import { PROFILE, SIGN_UP } from './constants';
 import { ProtectedRoute } from './helper';
 import { useAuth } from './hooks';
 import GlobalStyle from './globalStyle';
@@ -28,6 +27,11 @@ const App = (props) => {
         <Switch>
           <Route exact path="/" children={<Redirect to="/en/" />} />
           <Route exact path="/:lang/" children={<Home {...props} />} />
+          <Route
+            exact
+            path={`/:lang/${SIGN_UP}`}
+            children={<SignUp {...props} />}
+          />
           <ProtectedRoute
             user={useAuth.isAuthenticated}
             path={`/:lang/${PROFILE}`}

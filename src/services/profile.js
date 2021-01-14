@@ -9,21 +9,9 @@ export const profile = {
       throw new Error(error);
     }
   },
-  SOCIAL_LOGIN: async (body) => {
+  CREATE_USER: async (body) => {
     try {
-      const response = await makeRequest(
-        'v1/profile/socialLogin',
-        'POST',
-        body,
-      );
-      return response;
-    } catch (error) {
-      throw new Error(error);
-    }
-  },
-  ADD_USER: async (body) => {
-    try {
-      const response = await makeRequest('', 'POST', body);
+      const response = await makeRequest('v1/profile/create', 'POST', body);
       return response;
     } catch (error) {
       throw new Error(error);

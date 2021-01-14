@@ -13,6 +13,14 @@ export const i18n = {
     INVALID_NAME: 'الاسم غير صالح',
     REQUIRED: 'مطلوب',
     INVALID_EMAIL: 'البريد الالكتروني غير صالح',
+    FULL_NAME: 'الاسم بالكامل',
+    MOBILE: 'رقم الهاتف',
+    PASSWORD: 'كلمه المرور',
+    PASSWORD_CONFIRM: 'تاكيد كلمه المرور',
+    EMAIL: 'البريد الالكتروني',
+    INVALID_MOBILE: 'رقم الهاتف غير طالح',
+    PASSWORD_MIN_LENGTH_8: 'كلمه المرور يجب ان تكون اكثر من ٨ احرف او ارقام',
+    PASSWORD_NOT_MATCH: 'كلمه المرور غير متطابقه',
   },
   en: {
     HOME_PAGE_TITLE_TEXT:
@@ -27,5 +35,13 @@ export const i18n = {
     INVALID_NAME: 'Invalid Name',
     REQUIRED: 'Required',
     INVALID_EMAIL: 'Invalid Email',
+    FULL_NAME: 'Full Name',
+    MOBILE: 'Mobile',
+    PASSWORD: 'Password',
+    PASSWORD_CONFIRM: 'Confirm Password',
+    EMAIL: 'Email',
+    INVALID_MOBILE: 'Invalid Mobile',
+    PASSWORD_MIN_LENGTH_8: 'Password must have at least 8 characters',
+    PASSWORD_NOT_MATCH: 'The passwords do not match',
   },
 };

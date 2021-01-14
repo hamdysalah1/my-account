@@ -25,4 +25,16 @@ export const validate = {
       message: 'INVALID_EMAIL',
     },
   },
+  MOBILE: {
+    pattern: {
+      value: /^\d{10}$/,
+      message: 'INVALID_MOBILE',
+    },
+  },
+  PASSWORD: {
+    minLength: {
+      value: 8,
+      message: 'PASSWORD_MIN_LENGTH_8',
+    },
+  },
 };
