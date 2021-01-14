@@ -3,7 +3,6 @@ import { validate } from '../utils';
 const loginFields = [
   {
     name: 'username',
-    value: '',
     type: 'text',
     title: 'Username',
     id: 'username',

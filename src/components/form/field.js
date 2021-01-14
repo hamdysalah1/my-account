@@ -19,6 +19,7 @@ const Field = ({
   maxDate,
   rules,
   title,
+  currentValue,
 }) => (
   <>
     {type === 'text' && (
@@ -29,6 +30,7 @@ const Field = ({
         labelText={title}
         onChange={onChange}
         rules={rules}
+        currentValue={currentValue}
       />
     )}
     {type === 'password' && (
@@ -39,6 +41,7 @@ const Field = ({
         labelText={title}
         onChange={onChange}
         rules={rules}
+        currentValue={currentValue}
       />
     )}
     {type === 'select' && (
@@ -49,6 +52,7 @@ const Field = ({
         labelText={title}
         onChange={onChange}
         rules={rules}
+        currentValue={currentValue}
         options={options}
       />
     )}
@@ -60,6 +64,7 @@ const Field = ({
         labelText={title}
         onChange={onChange}
         rules={rules}
+        currentValue={currentValue}
       />
     )}
     {type === 'date' && (
@@ -70,6 +75,7 @@ const Field = ({
         labelText={title}
         onChange={onChange}
         rules={rules}
+        currentValue={currentValue}
         minDate={minDate}
         maxDate={maxDate}
       />
@@ -96,6 +102,8 @@ Field.propTypes = {
   id: PropTypes.string,
   onChange: PropTypes.func,
   options: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  currentValue: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+    .isRequired,
   rules: PropTypes.any.isRequired,
 };
 

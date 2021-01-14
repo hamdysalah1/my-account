@@ -17,8 +17,8 @@ export const sharedFormStyles = css`
       top: 5px;
     }
   }`}
-  ${({ value }) =>
-    value &&
+  ${({ currentValue }) =>
+    currentValue &&
     `
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.22);
 

@@ -27,6 +27,7 @@ const HomeForm = ({
   buttonOnClick,
   children,
   facebookCallback,
+  googleCallback,
 }) => (
   <Card>
     <>
@@ -69,7 +70,7 @@ const HomeForm = ({
               </Badge>
               <Badge backgroundColor="#fff">
                 <SocialBtn>
-                  <SocialButtons.Google />
+                  <SocialButtons.Google googleCallback={googleCallback} />
                 </SocialBtn>
               </Badge>
             </SocialBtnWrap>
@@ -118,6 +119,7 @@ HomeForm.propTypes = {
   buttonOnClick: PropTypes.func.isRequired,
   children: PropTypes.element.isRequired,
   facebookCallback: PropTypes.func.isRequired,
+  googleCallback: PropTypes.func.isRequired,
 };
 
 export default HomeForm;

@@ -7,8 +7,9 @@ import T from '../components/T';
 import { hasErrorMgs } from '../utils';
 
 const Form = ({ fields, onSubmit, afterLoop, serverMessage }) => {
-  const { register, handleSubmit, errors } = useForm({ mode: 'onChange' });
-
+  const { register, handleSubmit, errors, watch } = useForm({
+    mode: 'onChange',
+  });
   const formSubmit = (data) => {
     if (!Object.keys(errors).length) {
       onSubmit(data);
@@ -24,6 +25,7 @@ const Form = ({ fields, onSubmit, afterLoop, serverMessage }) => {
               // eslint-disable-next-line react/jsx-props-no-spreading
               {...field}
               rules={register(field.validationRules)}
+              currentValue={watch(field.name, field.value || '')}
             />
             {errors && (
               <ErrorMsg>

@@ -16,8 +16,8 @@ import { useAuth } from './hooks';
 import GlobalStyle from './globalStyle';
 
 const App = (props) => {
-  const [user] = useAuth();
-
+  // eslint-disable-next-line no-empty-pattern
+  const [] = useAuth();
   /**
    * TODO: save the lang to local storage in first visit and redirect to user user lang
    */
@@ -29,7 +29,7 @@ const App = (props) => {
           <Route exact path="/" children={<Redirect to="/en/" />} />
           <Route exact path={HOME} children={<Home {...props} />} />
           <ProtectedRoute
-            user={user}
+            user={useAuth.isAuthenticated}
             path={PROFILE}
             children={<Profile {...props} />}
           />

@@ -7,7 +7,15 @@ const Input = styled.input`
   ${sharedFormStyles};
 `;
 
-const TextField = ({ value, name, id, labelText, onChange, rules }) => (
+const TextField = ({
+  value,
+  name,
+  id,
+  labelText,
+  onChange,
+  rules,
+  currentValue,
+}) => (
   <>
     <Input
       type="text"
@@ -16,7 +24,7 @@ const TextField = ({ value, name, id, labelText, onChange, rules }) => (
       defaultValue={value}
       onChange={onChange}
       ref={rules}
-      required
+      currentValue={currentValue}
     />
     <label htmlFor={id}> {labelText} </label>
   </>
@@ -36,5 +44,7 @@ TextField.propTypes = {
   id: PropTypes.string,
   onChange: PropTypes.func,
   rules: PropTypes.any.isRequired,
+  currentValue: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+    .isRequired,
 };
 export default TextField;
