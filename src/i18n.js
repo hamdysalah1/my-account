@@ -21,6 +21,7 @@ export const i18n = {
     INVALID_MOBILE: 'رقم الهاتف غير طالح',
     PASSWORD_MIN_LENGTH_8: 'كلمه المرور يجب ان تكون اكثر من ٨ احرف او ارقام',
     PASSWORD_NOT_MATCH: 'كلمه المرور غير متطابقه',
+    FORGOT_PASSWORD_TEXT: 'استرجاع كلمه المرور',
   },
   en: {
     HOME_PAGE_TITLE_TEXT:
@@ -43,5 +44,6 @@ export const i18n = {
     INVALID_MOBILE: 'Invalid Mobile',
     PASSWORD_MIN_LENGTH_8: 'Password must have at least 8 characters',
     PASSWORD_NOT_MATCH: 'The passwords do not match',
+    FORGOT_PASSWORD_TEXT: 'Forgot Password',
   },
 };

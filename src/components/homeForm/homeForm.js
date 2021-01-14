@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Card from '../card/card';
 import T from '../T';
@@ -9,14 +10,12 @@ import {
   Contact,
   ForgotPassword,
   ActionsWrap,
-  RememberMe,
   ChildrenWrap,
 } from './styles/homeFormStyle';
 import Button from '../button/button';
-import { CheckboxField } from '../form/fields';
 import { AppleStoreIcon, PlayStoreIcon } from '../icons';
 
-const HomeForm = ({ formTitle, buttonText, buttonOnClick, children }) => (
+const HomeForm = ({ formTitle, buttonText, linkTo, children }) => (
   <Card>
     <>
       <FormWrap>
@@ -25,13 +24,11 @@ const HomeForm = ({ formTitle, buttonText, buttonOnClick, children }) => (
             <h3>
               <T id={formTitle} />
             </h3>
-            <Button.Secondary
-              type="button"
-              fontSize="14"
-              onClick={buttonOnClick}
-            >
-              <T id={buttonText} />
-            </Button.Secondary>
+            <Link to={linkTo}>
+              <Button.Secondary type="button" fontSize="14">
+                <T id={buttonText} />
+              </Button.Secondary>
+            </Link>
           </Header>
           <ChildrenWrap>{children}</ChildrenWrap>
         </Card.Content>
@@ -63,15 +60,21 @@ const HomeForm = ({ formTitle, buttonText, buttonOnClick, children }) => (
   </Card>
 );
 
-HomeForm.Actions = () => (
+HomeForm.Actions = ({ linkTo }) => (
   <ActionsWrap>
-    <ForgotPassword href="#"> Forgot Password? </ForgotPassword>
+    <Link to={linkTo}>
+      <ForgotPassword> Forgot Password? </ForgotPassword>
+    </Link>
   </ActionsWrap>
 );
+
+HomeForm.Actions.propTypes = {
+  linkTo: PropTypes.string.isRequired,
+};
 HomeForm.propTypes = {
   formTitle: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
-  buttonOnClick: PropTypes.func.isRequired,
+  linkTo: PropTypes.string.isRequired,
   children: PropTypes.element.isRequired,
 };
 

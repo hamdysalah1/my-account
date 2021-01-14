@@ -48,6 +48,15 @@ const useAuth = () => {
     cb(payload);
   };
 
+  useAuth.forgotPassword = async (res, cb) => {
+    const response = await res;
+    const payload = {
+      msg: response.msg || 'SOMETHING_WENT_WRONG',
+    };
+
+    cb(payload);
+  };
+
   useAuth.isAuthenticated = JSON.parse(localStorage.getItem('authUser'));
 
   return [user, dispatch];

@@ -9,9 +9,10 @@ function AuthContainer({
   formFields,
   onSubmit,
   formTitle,
-  buttonOnClick,
+  linkTo,
   buttonText,
   serverMessage,
+  afterLoop,
 }) {
   return (
     <Container>
@@ -27,14 +28,14 @@ function AuthContainer({
                 <Col md={6} xs={12}>
                   <HomeForm
                     formTitle={formTitle}
-                    buttonOnClick={buttonOnClick}
+                    linkTo={linkTo}
                     buttonText={buttonText}
                   >
                     <Form
                       fields={formFields}
                       onSubmit={onSubmit}
                       serverMessage={serverMessage}
-                      afterLoop={<HomeForm.Actions />}
+                      afterLoop={afterLoop}
                     />
                   </HomeForm>
                 </Col>
@@ -42,13 +43,13 @@ function AuthContainer({
             ) : (
               <HomeForm
                 formTitle={formTitle}
-                buttonOnClick={buttonOnClick}
+                linkTo={linkTo}
                 buttonText={buttonText}
               >
                 <Form
                   fields={formFields}
                   onSubmit={onSubmit}
-                  afterLoop={<HomeForm.Actions />}
+                  afterLoop={afterLoop && <HomeForm.Actions />}
                 />
               </HomeForm>
             )}
@@ -61,15 +62,17 @@ function AuthContainer({
 
 AuthContainer.defaultProps = {
   serverMessage: '',
+  afterLoop: <></>,
 };
 AuthContainer.propTypes = {
   formFields: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
     .isRequired,
   formTitle: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
-  buttonOnClick: PropTypes.func.isRequired,
+  linkTo: PropTypes.string.isRequired,
   onSubmit: PropTypes.func.isRequired,
   serverMessage: PropTypes.string,
+  afterLoop: PropTypes.element,
 };
 
 export default AuthContainer;
