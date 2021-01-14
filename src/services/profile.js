@@ -17,6 +17,18 @@ export const profile = {
       throw new Error(error);
     }
   },
+  FORGOT_PASSWORD: async (body) => {
+    try {
+      const response = await makeRequest(
+        'v1/profile/forgot-password',
+        'POST',
+        body,
+      );
+      return response;
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
 };
 
 export const getInsurance = 'GET_INSURANCE_FN_HERE';

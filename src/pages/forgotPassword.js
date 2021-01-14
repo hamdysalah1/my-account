@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { Header, Footer } from '../components';
 import { AuthContainer } from '../containers';
-import signUpFields from '../fixtures/signUp';
+import forgotPasswordFields from '../fixtures/forgotPassword';
 import { profile } from '../services';
 import { useAuth } from '../hooks';
 import { PROFILE } from '../constants';
 
-const SignUp = () => {
+const ForgotPassword = () => {
   const [error, setError] = useState('');
   const params = useParams();
   const history = useHistory();
@@ -17,10 +17,8 @@ const SignUp = () => {
   }
 
   const onSubmit = async (body) => {
-    useAuth.signUp(
-      'SIGN_UP',
-      profile.CREATE_USER({ ...body }),
-      (payload) => payload.error && setError(payload.error),
+    useAuth.forgotPassword(profile.FORGOT_PASSWORD({ ...body }), (payload) =>
+      setError(payload.msg),
     );
   };
 
@@ -28,10 +26,10 @@ const SignUp = () => {
     <>
       <Header />
       <AuthContainer
-        formFields={signUpFields}
+        formFields={forgotPasswordFields}
         linkTo={`/${params.lang}/`}
         buttonText="LOGIN_TEXT"
-        formTitle="SIGN_UP_TEXT"
+        formTitle="FORGOT_PASSWORD_TEXT"
         onSubmit={(e) => onSubmit(e)}
         serverMessage={error}
       />
@@ -39,4 +37,4 @@ const SignUp = () => {
     </>
   );
 };
-export default SignUp;
+export default ForgotPassword;

@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import { Header, Footer } from '../components';
+import { Header, Footer, HomeForm } from '../components';
 import { AuthContainer } from '../containers';
 import loginFields from '../fixtures/loginForm';
 import { profile } from '../services';
 import { useAuth } from '../hooks';
-import { PROFILE, SIGN_UP } from '../constants';
+import { PROFILE, SIGN_UP, FORGOT_PASSWORD } from '../constants';
 
 const Home = () => {
   const [error, setError] = useState('');
@@ -31,13 +31,14 @@ const Home = () => {
       <Header />
       <AuthContainer
         formFields={loginFields}
-        buttonOnClick={() => {
-          history.push(`/${params.lang}/${SIGN_UP}`);
-        }}
+        linkTo={`/${params.lang}/${SIGN_UP}`}
         buttonText="SIGN_UP_TEXT"
         formTitle="LOGIN_TEXT"
         onSubmit={(e) => onSubmit(e)}
         serverMessage={error}
+        afterLoop={
+          <HomeForm.Actions linkTo={`/${params.lang}/${FORGOT_PASSWORD}`} />
+        }
       />
       <Footer />
     </>
