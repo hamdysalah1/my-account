@@ -10,7 +10,7 @@ import {
 import Home from './pages/home';
 import Profile from './pages/profile';
 import ErrorBoundary from './errorBoundary';
-import { HOME, PROFILE } from './constants/routers';
+import { PROFILE } from './constants/routers';
 import { ProtectedRoute } from './helper';
 import { useAuth } from './hooks';
 import GlobalStyle from './globalStyle';
@@ -27,10 +27,10 @@ const App = (props) => {
         <GlobalStyle />
         <Switch>
           <Route exact path="/" children={<Redirect to="/en/" />} />
-          <Route exact path={HOME} children={<Home {...props} />} />
+          <Route exact path="/:lang/" children={<Home {...props} />} />
           <ProtectedRoute
             user={useAuth.isAuthenticated}
-            path={PROFILE}
+            path={`/:lang/${PROFILE}`}
             children={<Profile {...props} />}
           />
           <Route

@@ -16,11 +16,7 @@ const useAuth = () => {
   const [user, dispatch] = useReducer(reducer, initialState);
 
   useAuth.login = async (type, res, cb) => {
-    console.log('type', type);
-    console.log('cb', cb);
-    console.log('res', await res);
     const response = await res;
-    console.log('response', response);
     let payload;
 
     if (response.access_token) {

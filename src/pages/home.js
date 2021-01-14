@@ -6,13 +6,14 @@ import { HomeContainer } from '../containers';
 import loginFields from '../fixtures/loginForm';
 import { profile } from '../services';
 import { useAuth } from '../hooks';
+import { PROFILE } from '../constants';
 
 const Home = () => {
   const [error, setError] = useState('');
   const params = useParams();
   const history = useHistory();
   if (useAuth.isAuthenticated) {
-    history.push(`/${params.lang}/profile`);
+    history.push(`/${params.lang}/${PROFILE}`);
   }
 
   const onSubmit = async (body) => {
@@ -25,34 +26,6 @@ const Home = () => {
     });
   };
 
-  const facebookCallback = async (fb) => {
-    if (fb.accessToken) {
-      const body = { medium: 'facebook', accessToken: fb.accessToken };
-
-      useAuth.login(
-        'LOGIN',
-        profile.SOCIAL_LOGIN({ ...body }),
-        (p) => p.isAuthenticated && history.push(`/${params.lang}/profile`),
-      );
-    }
-  };
-
-  const googleCallback = async (google) => {
-    // if (google.accessToken) {
-    //   const body = {
-    //     medium: 'google',
-    //     accessToken: google.accessToken,
-    //   };
-    //   const response = await profile.SOCIAL_LOGIN(body);
-    //   console.log('response', response);
-    //   if (response.success) {
-    //     setUser({ ...google.profileObj });
-    //     history.push(`/${params.lang}/profile`);
-    //   } else {
-    //     setError(response.message);
-    //   }
-    // }
-  };
   return (
     <>
       <Header />
@@ -65,8 +38,6 @@ const Home = () => {
         formTitle="LOGIN_TEXT"
         onSubmit={(e) => onSubmit(e)}
         serverMessage={error}
-        facebookCallback={(e) => facebookCallback(e)}
-        googleCallback={(e) => googleCallback(e)}
       />
       <Footer />
     </>

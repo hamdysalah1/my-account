@@ -6,6 +6,7 @@ import {
   SECONDARY_COLOR,
 } from './style';
 import { PROFILE_CREATE, PROFILE_LOGIN } from './endpoints';
+import { PROFILE, SIGN_UP } from './routers';
 
 export {
   BORDER_RADIUS,
@@ -15,4 +16,6 @@ export {
   SECONDARY_COLOR,
   PROFILE_CREATE,
   PROFILE_LOGIN,
+  PROFILE,
+  SIGN_UP,
 };
