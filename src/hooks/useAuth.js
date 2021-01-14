@@ -1,30 +1,43 @@
-import { useState, useEffect } from 'react';
+import { useReducer } from 'react';
 
+function reducer(state, action) {
+  switch (action.type) {
+    case 'LOGIN':
+      return { ...action.payload };
+    default:
+      throw new Error();
+  }
+}
+const initialState = {
+  isAuthenticated: false,
+  error: '',
+};
 const useAuth = () => {
-  const [user, setUser] = useState(
-    JSON.parse(localStorage.getItem('authUser')),
-  );
+  const [user, dispatch] = useReducer(reducer, initialState);
 
-  useEffect(() => {
-    const listener = () => {
-      // get token from local storage
-      // validate token
-      // return user is it valid
+  useAuth.login = async (type, res, cb) => {
+    console.log('type', type);
+    console.log('cb', cb);
+    console.log('res', await res);
+    const response = await res;
+    console.log('response', response);
+    let payload;
 
-      const authUser = false;
-      if (authUser) {
-        localStorage.setItem('authUser', JSON.stringify(authUser));
-        setUser(authUser);
-      } else {
-        localStorage.removeItem('authUser');
-        setUser(null);
-      }
-    };
+    if (response.access_token) {
+      payload = { ...response, isAuthenticated: true };
+      localStorage.setItem('authUser', JSON.stringify({ ...response }));
+    } else {
+      payload = {
+        isAuthenticated: false,
+        error: response.message || 'something went wrong',
+      };
+    }
+    dispatch({ type, payload });
+    cb(payload);
+  };
 
-    return () => listener();
-  }, []);
-
-  return { user };
+  useAuth.isAuthenticated = JSON.parse(localStorage.getItem('authUser'));
+  return [user, dispatch];
 };
 
 export default useAuth;

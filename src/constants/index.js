@@ -5,6 +5,7 @@ import {
   PRIMARY_COLOR,
   SECONDARY_COLOR,
 } from './style';
+import { PROFILE_CREATE, PROFILE_LOGIN } from './endpoints';
 
 export {
   BORDER_RADIUS,
@@ -12,4 +13,6 @@ export {
   LIGHT_GRAY_COLOR,
   PRIMARY_COLOR,
   SECONDARY_COLOR,
+  PROFILE_CREATE,
+  PROFILE_LOGIN,
 };

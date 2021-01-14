@@ -19,7 +19,7 @@ export const makeRequest = (endpoint, method = 'GET', body) => {
     };
   }
 
-  return fetch(endpoint, reqProps)
+  return fetch(`${process.env.REACT_APP_HOST}/${endpoint}`, reqProps)
     .then((blob) => blob.json())
     .then((res) => res);
 };

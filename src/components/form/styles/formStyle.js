@@ -10,14 +10,21 @@ export const sharedFormStyles = css`
   transition: all 0.25s;
   ${({ type }) =>
     type !== 'checkbox' &&
-    `&:focus,
-  &:valid {
+    `&:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.22);
 
     & + label {
       top: 5px;
     }
   }`}
+  ${({ currentValue }) =>
+    currentValue &&
+    `
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.22);
+
+    & + label {
+      top: 5px;
+    }`}
 `;
 
 export const FieldWrap = styled.div`

@@ -7,9 +7,16 @@ const Input = styled.input`
   ${sharedFormStyles};
 `;
 
-const PasswordField = ({ value, name, id, labelText, onChange, rules }) => (
+const PasswordField = ({
+  value,
+  name,
+  id,
+  labelText,
+  onChange,
+  rules,
+  currentValue,
+}) => (
   <>
-    <label htmlFor={id}> {labelText} </label>
     <Input
       type="password"
       name={name}
@@ -17,7 +24,9 @@ const PasswordField = ({ value, name, id, labelText, onChange, rules }) => (
       defaultValue={value}
       onChange={onChange}
       ref={rules}
+      currentValue={currentValue}
     />
+    <label htmlFor={id}> {labelText} </label>
   </>
 );
 
@@ -35,5 +44,7 @@ PasswordField.propTypes = {
   id: PropTypes.string,
   onChange: PropTypes.func,
   rules: PropTypes.any.isRequired,
+  currentValue: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+    .isRequired,
 };
 export default PasswordField;

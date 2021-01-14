@@ -18,14 +18,17 @@ import {
 import Button from '../button/button';
 import { CheckboxField } from '../form/fields';
 import { Rounded, Badge } from '../../utils';
-import {
-  FacebookIcon,
-  GoogleIcon,
-  AppleStoreIcon,
-  PlayStoreIcon,
-} from '../icons';
+import { AppleStoreIcon, PlayStoreIcon } from '../icons';
+import SocialButtons from '../socialButtons/socialButtons';
 
-const HomeForm = ({ formTitle, buttonText, buttonOnClick, children }) => (
+const HomeForm = ({
+  formTitle,
+  buttonText,
+  buttonOnClick,
+  children,
+  facebookCallback,
+  googleCallback,
+}) => (
   <Card>
     <>
       <FormWrap>
@@ -62,14 +65,12 @@ const HomeForm = ({ formTitle, buttonText, buttonOnClick, children }) => (
             <SocialBtnWrap>
               <Badge backgroundColor="#fff">
                 <SocialBtn>
-                  <FacebookIcon />
-                  <p> Facebook </p>
+                  <SocialButtons.Facebook facebookCallback={facebookCallback} />
                 </SocialBtn>
               </Badge>
               <Badge backgroundColor="#fff">
                 <SocialBtn>
-                  <GoogleIcon />
-                  <p> Google </p>
+                  <SocialButtons.Google googleCallback={googleCallback} />
                 </SocialBtn>
               </Badge>
             </SocialBtnWrap>
@@ -117,6 +118,8 @@ HomeForm.propTypes = {
   buttonText: PropTypes.string.isRequired,
   buttonOnClick: PropTypes.func.isRequired,
   children: PropTypes.element.isRequired,
+  facebookCallback: PropTypes.func.isRequired,
+  googleCallback: PropTypes.func.isRequired,
 };
 
 export default HomeForm;

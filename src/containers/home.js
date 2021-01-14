@@ -11,6 +11,9 @@ function HomeContainer({
   formTitle,
   buttonOnClick,
   buttonText,
+  serverMessage,
+  facebookCallback,
+  googleCallback,
 }) {
   return (
     <Container>
@@ -28,10 +31,13 @@ function HomeContainer({
                     formTitle={formTitle}
                     buttonOnClick={buttonOnClick}
                     buttonText={buttonText}
+                    facebookCallback={facebookCallback}
+                    googleCallback={googleCallback}
                   >
                     <Form
                       fields={formFields}
                       onSubmit={onSubmit}
+                      serverMessage={serverMessage}
                       afterLoop={<HomeForm.Actions />}
                     />
                   </HomeForm>
@@ -57,13 +63,19 @@ function HomeContainer({
   );
 }
 
+HomeContainer.defaultProps = {
+  serverMessage: '',
+};
 HomeContainer.propTypes = {
   formFields: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
     .isRequired,
   formTitle: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
   buttonOnClick: PropTypes.func.isRequired,
+  facebookCallback: PropTypes.func.isRequired,
+  googleCallback: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
+  serverMessage: PropTypes.string,
 };
 
 export default HomeContainer;

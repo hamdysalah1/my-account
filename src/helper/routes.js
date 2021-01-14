@@ -4,6 +4,7 @@
 /* eslint-disable react/jsx-no-undef */
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import { HOME } from '../constants/routers';
 
 export function ProtectedRoute({ user, children, ...rest }) {
   return (

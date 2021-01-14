@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DateField, SelectField, TextField, TextareaField } from './fields';
+import {
+  DateField,
+  SelectField,
+  TextField,
+  TextareaField,
+  PasswordField,
+} from './fields';
 
 const Field = ({
   type,
@@ -13,6 +19,7 @@ const Field = ({
   maxDate,
   rules,
   title,
+  currentValue,
 }) => (
   <>
     {type === 'text' && (
@@ -23,16 +30,18 @@ const Field = ({
         labelText={title}
         onChange={onChange}
         rules={rules}
+        currentValue={currentValue}
       />
     )}
     {type === 'password' && (
-      <TextField
+      <PasswordField
         value={value}
         name={name}
         id={id}
         labelText={title}
         onChange={onChange}
         rules={rules}
+        currentValue={currentValue}
       />
     )}
     {type === 'select' && (
@@ -43,6 +52,7 @@ const Field = ({
         labelText={title}
         onChange={onChange}
         rules={rules}
+        currentValue={currentValue}
         options={options}
       />
     )}
@@ -54,6 +64,7 @@ const Field = ({
         labelText={title}
         onChange={onChange}
         rules={rules}
+        currentValue={currentValue}
       />
     )}
     {type === 'date' && (
@@ -64,6 +75,7 @@ const Field = ({
         labelText={title}
         onChange={onChange}
         rules={rules}
+        currentValue={currentValue}
         minDate={minDate}
         maxDate={maxDate}
       />
@@ -90,6 +102,8 @@ Field.propTypes = {
   id: PropTypes.string,
   onChange: PropTypes.func,
   options: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  currentValue: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+    .isRequired,
   rules: PropTypes.any.isRequired,
 };
 
