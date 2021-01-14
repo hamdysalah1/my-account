@@ -12,8 +12,6 @@ function HomeContainer({
   buttonOnClick,
   buttonText,
   serverMessage,
-  facebookCallback,
-  googleCallback,
 }) {
   return (
     <Container>
@@ -31,8 +29,6 @@ function HomeContainer({
                     formTitle={formTitle}
                     buttonOnClick={buttonOnClick}
                     buttonText={buttonText}
-                    facebookCallback={facebookCallback}
-                    googleCallback={googleCallback}
                   >
                     <Form
                       fields={formFields}
@@ -72,8 +68,6 @@ HomeContainer.propTypes = {
   formTitle: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
   buttonOnClick: PropTypes.func.isRequired,
-  facebookCallback: PropTypes.func.isRequired,
-  googleCallback: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
   serverMessage: PropTypes.string,
 };
