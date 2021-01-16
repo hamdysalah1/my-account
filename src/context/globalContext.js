@@ -1,21 +1,14 @@
 import React, { createContext, useState } from 'react';
-import PropType from 'prop-types';
 
-export const GlobalContext = createContext();
+const GlobalContext = createContext();
 
 const GlobalProvider = ({ children }) => {
-  const [globalData, setGlobalData] = useState({
-    lang: 'en',
-  });
+  const [globalData, setGlobalData] = useState();
   return (
     <GlobalContext.Provider value={[globalData, setGlobalData]}>
       {children}
     </GlobalContext.Provider>
   );
-};
-
-GlobalProvider.propTypes = {
-  children: PropType.element.isRequired,
 };
 
 export default GlobalProvider;
