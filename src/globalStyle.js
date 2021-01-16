@@ -27,6 +27,8 @@ const GlobalStyle = createGlobalStyle`
           background-image: url(https://d16053qvinakro.cloudfront.net/my-account/home_bg-min.jpg);
           background-repeat: no-repeat;
           position: relative;
+          background-size: cover;
+          background-attachment: fixed;
         `
         : 'background: #E5E5E5;'
     };
