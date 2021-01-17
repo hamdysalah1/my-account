@@ -5,6 +5,7 @@ import { FooterLinks, FooterRights } from './styles/footerStyle';
 import T from '../../T';
 
 function Footer() {
+  // const footerLinks = ['id', 'name', 'url'];
   return (
     <Container>
       <Row

@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "name": "FOOTER_LINKS_TERMS",
+      "url": "https://yallacompare.com/insurance/uae/en/terms-and-conditions"
+    },
+    {
+        "id": 2,
+        "name": "FOOTER_LINKS_PRIVACY",
+        "url": "https://yallacompare.com/insurance/uae/en/privacy-policy"
+    },
+    {
+        "id": 3,
+        "name": "FOOTER_LINKS_DISCLAIMER",
+        "url": "https://yallacompare.com/insurance/uae/en/disclaimer"
+    },
+    {
+        "id": 4,
+        "name": "FOOTER_LINKS_CONTACT_COMPLAINTS",
+        "url": "https://yallacompare.com/insurance/uae/en/contact-us"
+    },
+    {
+        "id": 5,
+        "name": "FOOTER_LINKS_ABOUT",
+        "url": "https://yallacompare.com/insurance/uae/en/about-us"
+    }
+  ]
