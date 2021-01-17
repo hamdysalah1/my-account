@@ -1,7 +1,5 @@
-import { useState, useEffect, useContext } from 'react';
-import { GlobalContext } from '../context';
-
-const getOppositeValue = (rule) => {
+/* eslint-disable import/prefer-default-export */
+export const getOppositeValue = (rule) => {
   switch (rule) {
     case 'left':
       return 'right';
@@ -23,13 +21,3 @@ const getOppositeValue = (rule) => {
       return rule;
   }
 };
-
-const useStyle = () => {
-  const [{ lang }] = useContext(GlobalContext);
-
-  useStyle.rtl = (rule) => (lang === 'ar' ? getOppositeValue(rule) : rule);
-
-  return useStyle.rtl;
-};
-
-export default useStyle;
