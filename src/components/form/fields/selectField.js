@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { sharedFormStyles } from '../styles/formStyle';
+import T from '../../T';
 
 const Select = styled.select`
   ${sharedFormStyles}
@@ -17,7 +18,10 @@ const SelectField = ({
   rules,
 }) => (
   <>
-    <label htmlFor={id}> {labelText} </label>
+    <label htmlFor={id}>
+      {' '}
+      <T id={labelText} />{' '}
+    </label>
     <Select
       name={name}
       id={id}
