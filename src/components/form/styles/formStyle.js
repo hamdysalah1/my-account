@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components/macro';
+import { rtl } from '../../../helper';
 
 export const sharedFormStyles = css`
   border: none;
@@ -32,7 +33,7 @@ export const FieldWrap = styled.div`
   position: relative;
   & > label {
     position: absolute;
-    left: 15px;
+    ${rtl('left', '15px')}
     top: 20px;
     color: rgba(0, 0, 0, 0.4);
     font-size: 16px;

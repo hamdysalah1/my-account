@@ -10,10 +10,13 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
   body {
-    font-family: 'Inter', sans-serif;
+
     font-weight: 300;
     font-size: 22px;
-    ${({ lang }) => lang === 'ar' && `direction: rtl;`}
+    ${({ lang }) =>
+      lang === 'ar'
+        ? `direction: rtl;font-family: 'Almarai', sans-serif;`
+        : `font-family: 'Inter', sans-serif;`}
     ${({ user }) =>
       !user
         ? `
