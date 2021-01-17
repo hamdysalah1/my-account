@@ -31,11 +31,9 @@ const LangSwitcher = () => {
     history.replace({ pathname });
   };
   return (
-    <Link to>
-      <Language onClick={() => setLang()}>
-        <T id="LANG" />
-      </Language>
-    </Link>
+    <Language onClick={() => setLang()}>
+      <T id="LANG" />
+    </Language>
   );
 };
 
