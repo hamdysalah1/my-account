@@ -2,12 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 import { xsMax } from 'thegridsys/breakPoints';
 import normalize from 'normalize.css';
 
-const isHome =
-  window.location.pathname === '/en/' ||
-  window.location.pathname === '/en' ||
-  window.location.pathname === '/ar' ||
-  window.location.pathname === '/ar/' ||
-  window.location.pathname === '/';
 const GlobalStyle = createGlobalStyle`
   ${normalize}
   * {
@@ -20,8 +14,8 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 300;
     font-size: 22px;
     ${({ lang }) => lang === 'ar' && `direction: rtl;`}
-    ${
-      isHome
+    ${({ user }) =>
+      !user
         ? `
           background-image: url(https://d16053qvinakro.cloudfront.net/my-account/home_bg-min.jpg);
           background-repeat: no-repeat;
@@ -29,11 +23,10 @@ const GlobalStyle = createGlobalStyle`
           background-size: cover;
           background-attachment: fixed;
         `
-        : 'background: #E5E5E5;'
-    };
+        : 'background: #E5E5E5;'};
   }
-  ${
-    isHome &&
+  ${({ user }) =>
+    !user &&
     `
       body::after {
         content: '';
@@ -54,8 +47,7 @@ const GlobalStyle = createGlobalStyle`
           display: none;
         }
       }
-    `
-  }
+    `}
 `;
 
 export default GlobalStyle;

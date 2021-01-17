@@ -25,7 +25,7 @@ const App = (props) => {
   return (
     <>
       <Router>
-        <GlobalStyle lang={lang} />
+        <GlobalStyle lang={lang} user={useAuth.isAuthenticated} />
         <Switch>
           <Route exact path="/" children={<Redirect to="/en/" />} />
           <Route
