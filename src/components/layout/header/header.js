@@ -26,7 +26,7 @@ function Header() {
           alignItems="center"
           justifyContent="space-between"
         >
-          <Col xs="12" md="6" alignSelf="center" order="1">
+          <Col xs="9" md="6" alignSelf="center" order="1">
             <YallaHomeLogoWrapper user={useAuth.isAuthenticated}>
               <Responsive>
                 {(r) => (
@@ -45,7 +45,6 @@ function Header() {
               </Menu>
             </Col>
           )}
-
           <Responsive>
             {(r) => (
               <>
@@ -84,7 +83,11 @@ function Header() {
                     </Row>
                   </Col>
                 ) : (
-                  <div />
+                  <Col xs="3" md="3" order="2">
+                    <Language>
+                      <T id="LANG" />
+                    </Language>
+                  </Col>
                 )}
               </>
             )}
