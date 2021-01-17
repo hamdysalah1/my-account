@@ -63,7 +63,9 @@ const HomeForm = ({ formTitle, buttonText, linkTo, children }) => (
 HomeForm.Actions = ({ linkTo }) => (
   <ActionsWrap>
     <Link to={linkTo}>
-      <ForgotPassword> Forgot Password? </ForgotPassword>
+      <ForgotPassword>
+        <T id="FORGOT_PASSWORD" />
+      </ForgotPassword>
     </Link>
   </ActionsWrap>
 );
