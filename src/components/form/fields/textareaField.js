@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { sharedFormStyles } from '../styles/formStyle';
+import T from '../../T';
 
 const Textarea = styled.textarea`
   ${sharedFormStyles}
@@ -24,7 +25,10 @@ const TextareaField = ({
       ref={rules}
       currentValue={currentValue}
     />
-    <label htmlFor={id}> {labelText} </label>
+    <label htmlFor={id}>
+      {' '}
+      <T id={labelText} />{' '}
+    </label>
   </>
 );
 
