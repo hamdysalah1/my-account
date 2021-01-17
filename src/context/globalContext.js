@@ -3,9 +3,11 @@ import PropType from 'prop-types';
 
 export const GlobalContext = createContext();
 
+const getLangFromURL = window.location.pathname.split('/')[1];
+
 const GlobalProvider = ({ children }) => {
   const [globalData, setGlobalData] = useState({
-    lang: 'en',
+    lang: getLangFromURL || 'en',
   });
   return (
     <GlobalContext.Provider value={[globalData, setGlobalData]}>

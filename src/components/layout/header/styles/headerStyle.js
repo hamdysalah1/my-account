@@ -20,6 +20,7 @@ export const UserName = styled.div`
   line-height: 36px;
 `;
 export const Language = styled.div`
+  cursor: pointer;
   ${({ user }) =>
     !user
       ? `

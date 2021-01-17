@@ -3,7 +3,6 @@ import { Row, Col, Container } from 'thegridsys';
 import {
   HeadWrapper,
   UserName,
-  Language,
   Menu,
   Notification,
   YallaHomeLogoWrapper,
@@ -15,9 +14,9 @@ import NotificationIcon from '../../icons/notifications';
 import MenuIcon from '../../icons/menu';
 import T from '../../T';
 import { useAuth } from '../../../hooks';
+import LangSwitcher from './langSwitcher';
 
 function Header() {
-  console.log('useAuth.isAuthenticated', useAuth.isAuthenticated);
   return (
     <Container>
       <HeadWrapper>
@@ -58,9 +57,7 @@ function Header() {
                       {useAuth.isAuthenticated ? (
                         <>
                           <Col xs="1" md="3">
-                            <Language>
-                              <T id="LANG" />
-                            </Language>
+                            <LangSwitcher />
                           </Col>
                           <Col xs="1" md="3">
                             <Notification>
@@ -74,9 +71,7 @@ function Header() {
                       ) : (
                         <>
                           <Col xs="1" md="12">
-                            <Language>
-                              <T id="LANG" />
-                            </Language>
+                            <LangSwitcher />
                           </Col>
                         </>
                       )}
