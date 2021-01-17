@@ -1,3 +1,4 @@
-import GlobalProvider from './globalContext';
+/* eslint-disable import/prefer-default-export */
+import GlobalProvider, { GlobalContext } from './globalContext';
 
-export { GlobalProvider };
+export { GlobalProvider, GlobalContext };

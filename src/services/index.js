@@ -1,3 +1,4 @@
-import { home } from './home';
+/* eslint-disable import/prefer-default-export */
+import { profile } from './profile';
 
-export { home };
+export { profile };

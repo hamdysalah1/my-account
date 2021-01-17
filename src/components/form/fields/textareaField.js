@@ -6,16 +6,25 @@ import { sharedFormStyles } from '../styles/formStyle';
 const Textarea = styled.textarea`
   ${sharedFormStyles}
 `;
-const TextareaField = ({ value, name, id, labelText, onChange, rules }) => (
+const TextareaField = ({
+  value,
+  name,
+  id,
+  labelText,
+  onChange,
+  rules,
+  currentValue,
+}) => (
   <>
-    <label htmlFor={id}> {labelText} </label>
     <Textarea
       name={name}
       id={id}
       defaultValue={value}
       onChange={onChange}
       ref={rules}
+      currentValue={currentValue}
     />
+    <label htmlFor={id}> {labelText} </label>
   </>
 );
 
@@ -33,6 +42,8 @@ TextareaField.propTypes = {
   id: PropTypes.string,
   onChange: PropTypes.func,
   rules: PropTypes.any.isRequired,
+  currentValue: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+    .isRequired,
 };
 
 export default TextareaField;

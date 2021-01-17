@@ -36,6 +36,7 @@ CheckboxField.defaultProps = {
   id: '',
   onChange: () => {},
   width: 'auto',
+  rules: '',
 };
 
 CheckboxField.propTypes = {
@@ -44,7 +45,7 @@ CheckboxField.propTypes = {
   name: PropTypes.string.isRequired,
   id: PropTypes.string,
   onChange: PropTypes.func,
-  rules: PropTypes.any.isRequired,
+  rules: PropTypes.any,
   width: PropTypes.string,
 };
 export default CheckboxField;

@@ -1,32 +1,60 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/no-children-prop */
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './pages/home';
-import Profile from './pages/profile';
+import React, { useContext } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
+import { Home, Profile, SignUp, ForgotPassword } from './pages';
 import ErrorBoundary from './errorBoundary';
-import { HOME, PROFILE } from './constants/routers';
+import { PROFILE, SIGN_UP, FORGOT_PASSWORD } from './constants';
 import { ProtectedRoute } from './helper';
 import { useAuth } from './hooks';
+import GlobalStyle from './globalStyle';
+import { GlobalContext } from './context';
 
 const App = (props) => {
-  const { user } = useAuth();
-
+  // eslint-disable-next-line no-empty-pattern
+  const [] = useAuth();
+  const [{ lang }] = useContext(GlobalContext);
+  /**
+   * TODO: save the lang to local storage in first visit and redirect to user user lang
+   */
   return (
-    <Router>
-      <Switch>
-        <Route exact path={HOME} children={<Home {...props} />} />
-        <ProtectedRoute
-          user={user}
-          path={PROFILE}
-          children={<Profile {...props} />}
-        />
-        <Route
-          path="*"
-          children={<ErrorBoundary error="404" errorInfo="Page not found" />}
-        />
-      </Switch>
-    </Router>
+    <>
+      <Router>
+        <GlobalStyle lang={lang} user={useAuth.isAuthenticated} />
+        <Switch>
+          <Route exact path="/" children={<Redirect to="/en/" />} />
+          <Route
+            exact
+            path="/:lang/"
+            children={<Home lang={lang} {...props} />}
+          />
+          <Route
+            exact
+            path={`/:lang/${SIGN_UP}`}
+            children={<SignUp lang={lang} {...props} />}
+          />
+          <Route
+            exact
+            path={`/:lang/${FORGOT_PASSWORD}`}
+            children={<ForgotPassword lang={lang} {...props} />}
+          />
+          <ProtectedRoute
+            user={useAuth.isAuthenticated}
+            path={`/:lang/${PROFILE}`}
+            children={<Profile lang={lang} {...props} />}
+          />
+          <Route
+            path="*"
+            children={<ErrorBoundary error="404" lang={lang} />}
+          />
+        </Switch>
+      </Router>
+    </>
   );
 };
 

@@ -2,8 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 import { xsMax } from 'thegridsys/breakPoints';
 import normalize from 'normalize.css';
 
-const isHome =
-  window.location.pathname === '/en' || window.location.pathname === '/ar';
 const GlobalStyle = createGlobalStyle`
   ${normalize}
   * {
@@ -15,18 +13,20 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     font-size: 22px;
-    ${
-      isHome
+    ${({ lang }) => lang === 'ar' && `direction: rtl;`}
+    ${({ user }) =>
+      !user
         ? `
           background-image: url(https://d16053qvinakro.cloudfront.net/my-account/home_bg-min.jpg);
           background-repeat: no-repeat;
           position: relative;
+          background-size: cover;
+          background-attachment: fixed;
         `
-        : 'background: #E5E5E5;'
-    };
+        : 'background: #E5E5E5;'};
   }
-  ${
-    isHome &&
+  ${({ user }) =>
+    !user &&
     `
       body::after {
         content: '';
@@ -47,8 +47,7 @@ const GlobalStyle = createGlobalStyle`
           display: none;
         }
       }
-    `
-  }
+    `}
 `;
 
 export default GlobalStyle;

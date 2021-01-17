@@ -1,4 +1,4 @@
-import HomeContainer from './home';
+import AuthContainer from './authContainer';
 import Form from './form';
 
-export { HomeContainer, Form };
+export { AuthContainer, Form };

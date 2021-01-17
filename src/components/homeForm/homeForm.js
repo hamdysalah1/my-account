@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Card from '../card/card';
 import T from '../T';
@@ -6,26 +7,15 @@ import {
   Header,
   FormWrap,
   Footer,
-  SocialBtn,
-  SocialBtnWrap,
-  SocialWrap,
   Contact,
   ForgotPassword,
   ActionsWrap,
-  RememberMe,
   ChildrenWrap,
 } from './styles/homeFormStyle';
 import Button from '../button/button';
-import { CheckboxField } from '../form/fields';
-import { Rounded, Badge } from '../../utils';
-import {
-  FacebookIcon,
-  GoogleIcon,
-  AppleStoreIcon,
-  PlayStoreIcon,
-} from '../icons';
+import { AppleStoreIcon, PlayStoreIcon } from '../icons';
 
-const HomeForm = ({ formTitle, buttonText, buttonOnClick, children }) => (
+const HomeForm = ({ formTitle, buttonText, linkTo, children }) => (
   <Card>
     <>
       <FormWrap>
@@ -34,46 +24,17 @@ const HomeForm = ({ formTitle, buttonText, buttonOnClick, children }) => (
             <h3>
               <T id={formTitle} />
             </h3>
-            <Button.Secondary
-              type="button"
-              fontSize="14"
-              onClick={buttonOnClick}
-            >
-              <T id={buttonText} />
-            </Button.Secondary>
+            <Link to={linkTo}>
+              <Button.Secondary type="button" fontSize="14">
+                <T id={buttonText} />
+              </Button.Secondary>
+            </Link>
           </Header>
           <ChildrenWrap>{children}</ChildrenWrap>
         </Card.Content>
       </FormWrap>
       <Footer>
         <Card.Content>
-          <SocialWrap>
-            <Rounded
-              backgroundColor="#000"
-              color="#fff"
-              width="60px"
-              height="60px"
-            >
-              <T id="HOME_FORM_OR" />
-            </Rounded>
-            <p>
-              <T id="LOGIN_WITH_SOCIAL" />
-            </p>
-            <SocialBtnWrap>
-              <Badge backgroundColor="#fff">
-                <SocialBtn>
-                  <FacebookIcon />
-                  <p> Facebook </p>
-                </SocialBtn>
-              </Badge>
-              <Badge backgroundColor="#fff">
-                <SocialBtn>
-                  <GoogleIcon />
-                  <p> Google </p>
-                </SocialBtn>
-              </Badge>
-            </SocialBtnWrap>
-          </SocialWrap>
           <Contact>
             <p>
               <T id="HOME_CONTACT_NUMBER" />
@@ -99,23 +60,21 @@ const HomeForm = ({ formTitle, buttonText, buttonOnClick, children }) => (
   </Card>
 );
 
-HomeForm.Actions = () => (
+HomeForm.Actions = ({ linkTo }) => (
   <ActionsWrap>
-    <RememberMe>
-      <CheckboxField
-        labelText="Remember me"
-        name="remember"
-        id="remember"
-        rules={React.createRef()}
-      />
-    </RememberMe>
-    <ForgotPassword href="#"> Forgot Password? </ForgotPassword>
+    <Link to={linkTo}>
+      <ForgotPassword> Forgot Password? </ForgotPassword>
+    </Link>
   </ActionsWrap>
 );
+
+HomeForm.Actions.propTypes = {
+  linkTo: PropTypes.string.isRequired,
+};
 HomeForm.propTypes = {
   formTitle: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
-  buttonOnClick: PropTypes.func.isRequired,
+  linkTo: PropTypes.string.isRequired,
   children: PropTypes.element.isRequired,
 };
 

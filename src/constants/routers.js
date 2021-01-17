@@ -1,3 +1,3 @@
-export const HOME = '/:lang';
-export const SIGN_UP = '/:lang:/sign-up';
-export const PROFILE = '/:lang/profile';
+export const SIGN_UP = 'sign-up/';
+export const PROFILE = 'profile/';
+export const FORGOT_PASSWORD = 'forgot-password/';

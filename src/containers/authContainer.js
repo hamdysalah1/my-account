@@ -5,12 +5,14 @@ import { Hero, HomeForm } from '../components';
 import { Responsive } from '../helper';
 import Form from './form';
 
-function HomeContainer({
+function AuthContainer({
   formFields,
   onSubmit,
   formTitle,
-  buttonOnClick,
+  linkTo,
   buttonText,
+  serverMessage,
+  afterLoop,
 }) {
   return (
     <Container>
@@ -26,13 +28,14 @@ function HomeContainer({
                 <Col md={6} xs={12}>
                   <HomeForm
                     formTitle={formTitle}
-                    buttonOnClick={buttonOnClick}
+                    linkTo={linkTo}
                     buttonText={buttonText}
                   >
                     <Form
                       fields={formFields}
                       onSubmit={onSubmit}
-                      afterLoop={<HomeForm.Actions />}
+                      serverMessage={serverMessage}
+                      afterLoop={afterLoop}
                     />
                   </HomeForm>
                 </Col>
@@ -40,13 +43,13 @@ function HomeContainer({
             ) : (
               <HomeForm
                 formTitle={formTitle}
-                buttonOnClick={buttonOnClick}
+                linkTo={linkTo}
                 buttonText={buttonText}
               >
                 <Form
                   fields={formFields}
                   onSubmit={onSubmit}
-                  afterLoop={<HomeForm.Actions />}
+                  afterLoop={afterLoop && <HomeForm.Actions />}
                 />
               </HomeForm>
             )}
@@ -57,13 +60,19 @@ function HomeContainer({
   );
 }
 
-HomeContainer.propTypes = {
+AuthContainer.defaultProps = {
+  serverMessage: '',
+  afterLoop: <></>,
+};
+AuthContainer.propTypes = {
   formFields: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
     .isRequired,
   formTitle: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
-  buttonOnClick: PropTypes.func.isRequired,
+  linkTo: PropTypes.string.isRequired,
   onSubmit: PropTypes.func.isRequired,
+  serverMessage: PropTypes.string,
+  afterLoop: PropTypes.element,
 };
 
-export default HomeContainer;
+export default AuthContainer;

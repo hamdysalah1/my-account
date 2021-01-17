@@ -2,14 +2,13 @@ import { validate } from '../utils';
 
 const loginFields = [
   {
-    name: 'first_name',
-    value: '',
+    name: 'username',
     type: 'text',
-    title: 'Name',
-    id: 'first_name',
+    title: 'Username',
+    id: 'username',
     validationRules: {
       required: 'REQUIRED',
-      ...validate.NAME,
+      ...validate.EMAIL,
     },
   },
   {

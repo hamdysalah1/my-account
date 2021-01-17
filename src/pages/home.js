@@ -1,24 +1,44 @@
-import React from 'react';
-import { Header, Footer } from '../components';
-import { HomeContainer } from '../containers';
+/* eslint-disable react/prop-types */
+import React, { useState } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
+import { Header, Footer, HomeForm } from '../components';
+import { AuthContainer } from '../containers';
 import loginFields from '../fixtures/loginForm';
+import { profile } from '../services';
+import { useAuth } from '../hooks';
+import { PROFILE, SIGN_UP, FORGOT_PASSWORD } from '../constants';
 
 const Home = () => {
-  console.log('loginFields', typeof loginFields);
-  const onSubmit = (data) => {
-    console.log('data', data);
+  const [error, setError] = useState('');
+  const params = useParams();
+  const history = useHistory();
+  if (useAuth.isAuthenticated) {
+    history.push(`/${params.lang}/${PROFILE}`);
+  }
+
+  const onSubmit = async (body) => {
+    useAuth.login('LOGIN', profile.GET_TOKEN({ ...body }), (payload) => {
+      if (payload.isAuthenticated) {
+        history.push(`/${params.lang}/profile`);
+      } else {
+        setError(payload.error);
+      }
+    });
   };
+
   return (
     <>
       <Header />
-      <HomeContainer
+      <AuthContainer
         formFields={loginFields}
-        buttonOnClick={() => {
-          console.log('Clicked');
-        }}
+        linkTo={`/${params.lang}/${SIGN_UP}`}
         buttonText="SIGN_UP_TEXT"
         formTitle="LOGIN_TEXT"
-        onSubmit={() => {}}
+        onSubmit={(e) => onSubmit(e)}
+        serverMessage={error}
+        afterLoop={
+          <HomeForm.Actions linkTo={`/${params.lang}/${FORGOT_PASSWORD}`} />
+        }
       />
       <Footer />
     </>
