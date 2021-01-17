@@ -7,7 +7,6 @@ import {
   Menu,
   Notification,
   YallaHomeLogoWrapper,
-  YallaLogoWrapper,
 } from './styles/headerStyle';
 import { Responsive } from '../../../helper';
 import YallaLogo from '../../images/YClogo';
