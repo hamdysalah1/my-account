@@ -1,12 +1,14 @@
 /* eslint-disable react/forbid-prop-types */
-import React from 'react';
+import React, { useContext } from 'react';
 import PropType from 'prop-types';
 import { useForm } from 'react-hook-form';
 import { Field, FieldWrap, Button, ErrorMsg } from '../components';
 import T from '../components/T';
 import { hasErrorMgs } from '../utils';
+import { GlobalContext } from '../context';
 
 const Form = ({ fields, onSubmit, afterLoop, serverMessage }) => {
+  const [{ lang }] = useContext(GlobalContext);
   const { register, handleSubmit, errors, watch } = useForm({
     mode: 'onChange',
   });
@@ -20,7 +22,7 @@ const Form = ({ fields, onSubmit, afterLoop, serverMessage }) => {
       <>
         {serverMessage && <ErrorMsg>{serverMessage}</ErrorMsg>}
         {fields.map((field) => (
-          <FieldWrap key={`${field.name}`}>
+          <FieldWrap key={`${field.name}`} lang={lang}>
             <Field
               // eslint-disable-next-line react/jsx-props-no-spreading
               {...field}
