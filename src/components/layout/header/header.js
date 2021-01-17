@@ -27,9 +27,15 @@ function Header() {
           alignItems="center"
           justifyContent="space-between"
         >
-          <Col xs="9" md="6" alignSelf="center" order="1">
+          <Col xs="12" md="6" alignSelf="center" order="1">
             <YallaHomeLogoWrapper user={useAuth.isAuthenticated}>
-              <YallaHomeLogo />
+              <Responsive>
+                {(r) => (
+                  <>
+                    {r.tablet || r.desktop ? <YallaHomeLogo /> : <YallaLogo />}
+                  </>
+                )}
+              </Responsive>
             </YallaHomeLogoWrapper>
           </Col>
           {useAuth.isAuthenticated && (
