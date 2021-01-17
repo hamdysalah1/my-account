@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// eslint-disable-next-line import/named
 import { Primary, Secondary, Default } from './styles/buttonStyle';
 
 const Button = ({ children }) => children;
