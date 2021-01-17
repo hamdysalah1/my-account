@@ -79,9 +79,7 @@ function Header() {
                   </Col>
                 ) : (
                   <Col xs="3" md="3" order="2">
-                    <Language>
-                      <T id="LANG" />
-                    </Language>
+                    <LangSwitcher />
                   </Col>
                 )}
               </>
