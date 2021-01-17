@@ -63,7 +63,7 @@ export const Contact = styled.div`
   }
 `;
 
-export const ForgotPassword = styled.a`
+export const ForgotPassword = styled.span`
   color: ${PRIMARY_COLOR};
 `;
 export const ActionsWrap = styled.div`

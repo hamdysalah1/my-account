@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import { xsMax } from 'thegridsys/breakPoints';
 import {
   SECONDARY_COLOR,
   DEFAULT_COLOR,
@@ -27,6 +28,9 @@ export const Language = styled.div`
       display: block;
       text-align: right;
       font-size: 18px;
+      @media (max-width: ${xsMax}px) {
+        color: ${BLACK_COLOR};
+      }
     `
       : `color: ${BLACK_COLOR};`};
 `;
@@ -53,7 +57,6 @@ export const YallaHomeLogoWrapper = styled.div`
       `
       : ` display: none`};
 `;
-
 export const YallaLogoWrapper = styled.div`
   ${({ user }) =>
     !user

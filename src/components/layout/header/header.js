@@ -6,7 +6,6 @@ import {
   Menu,
   Notification,
   YallaHomeLogoWrapper,
-  YallaLogoWrapper,
 } from './styles/headerStyle';
 import { Responsive } from '../../../helper';
 import YallaLogo from '../../images/YClogo';
@@ -28,7 +27,13 @@ function Header() {
         >
           <Col xs="9" md="6" alignSelf="center" order="1">
             <YallaHomeLogoWrapper user={useAuth.isAuthenticated}>
-              <YallaHomeLogo />
+              <Responsive>
+                {(r) => (
+                  <>
+                    {r.tablet || r.desktop ? <YallaHomeLogo /> : <YallaLogo />}
+                  </>
+                )}
+              </Responsive>
             </YallaHomeLogoWrapper>
           </Col>
           {useAuth.isAuthenticated && (
@@ -39,7 +44,6 @@ function Header() {
               </Menu>
             </Col>
           )}
-
           <Responsive>
             {(r) => (
               <>
@@ -74,7 +78,11 @@ function Header() {
                     </Row>
                   </Col>
                 ) : (
-                  <div />
+                  <Col xs="3" md="3" order="2">
+                    <Language>
+                      <T id="LANG" />
+                    </Language>
+                  </Col>
                 )}
               </>
             )}

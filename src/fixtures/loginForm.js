@@ -4,7 +4,7 @@ const loginFields = [
   {
     name: 'username',
     type: 'text',
-    title: 'Username',
+    title: 'USERNAME',
     id: 'username',
     validationRules: {
       required: 'REQUIRED',
@@ -14,7 +14,7 @@ const loginFields = [
   {
     name: 'password',
     value: '',
-    title: 'password',
+    title: 'PASSWORD',
     type: 'password',
     id: 'password',
     validationRules: {
