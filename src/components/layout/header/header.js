@@ -15,10 +15,10 @@ import YallaHomeLogo from '../../images/YChomeLogo';
 import NotificationIcon from '../../icons/notifications';
 import MenuIcon from '../../icons/menu';
 import T from '../../T';
+import { useAuth } from '../../../hooks';
 
-const isHome =
-  window.location.pathname === '/en' || window.location.pathname === '/ar';
 function Header() {
+  console.log('useAuth.isAuthenticated', useAuth.isAuthenticated);
   return (
     <Container>
       <HeadWrapper>
@@ -28,19 +28,19 @@ function Header() {
           justifyContent="space-between"
         >
           <Col xs="9" md="6" alignSelf="center" order="1">
-            <YallaHomeLogoWrapper>
+            <YallaHomeLogoWrapper user={useAuth.isAuthenticated}>
               <YallaHomeLogo />
             </YallaHomeLogoWrapper>
-            <YallaLogoWrapper>
-              <YallaLogo />
-            </YallaLogoWrapper>
           </Col>
-          <Col xs="3" md="4" alignSelf="center" order="2">
-            <Menu>
-              <T id="MENU_TITLE" />
-              <MenuIcon />
-            </Menu>
-          </Col>
+          {useAuth.isAuthenticated && (
+            <Col xs="3" md="4" alignSelf="center" order="2">
+              <Menu>
+                <T id="MENU_TITLE" />
+                <MenuIcon />
+              </Menu>
+            </Col>
+          )}
+
           <Responsive>
             {(r) => (
               <>
@@ -51,16 +51,7 @@ function Header() {
                       alignItems="center"
                       justifyContent="space-between"
                     >
-                      {isHome ? (
-                        <>
-                          {' '}
-                          <Col xs="1" md="12">
-                            <Language>
-                              <T id="LANG" />
-                            </Language>
-                          </Col>{' '}
-                        </>
-                      ) : (
+                      {useAuth.isAuthenticated ? (
                         <>
                           <Col xs="1" md="3">
                             <Language>
@@ -74,6 +65,14 @@ function Header() {
                           </Col>
                           <Col xs="1" md="3">
                             <UserName>D</UserName>
+                          </Col>
+                        </>
+                      ) : (
+                        <>
+                          <Col xs="1" md="12">
+                            <Language>
+                              <T id="LANG" />
+                            </Language>
                           </Col>
                         </>
                       )}

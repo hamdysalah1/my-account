@@ -1,69 +1,27 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from 'react';
 import { Row, Col, Container } from 'thegridsys';
-import { FooterLinks, FooterRights } from './styles/footerStyle';
+import {
+  FooterLinks,
+  FooterRights,
+  FooterLinksWrapper,
+} from './styles/footerStyle';
 import T from '../../T';
+import footerLinks from '../../../fixtures/footerLinks.json';
+import { useAuth } from '../../../hooks';
 
 function Footer() {
-  // const footerLinks = ['id', 'name', 'url'];
   return (
     <Container>
-      <Row
-        alignContent="flex-start"
-        alignItems="center"
-        justifyContent="space-between"
-      >
-        <Col xs="12" sm="2" md="4" lg="4" alignSelf="center" order="1">
-          <FooterLinks>
-            <a
-              href="https://yallacompare.com/insurance/uae/en/terms-and-conditions"
-              target="_blank"
-            >
-              <T id="FOOTER_LINKS_TERMS" />
+      <FooterLinksWrapper>
+        {footerLinks.map((item) => (
+          <FooterLinks key={item.id} user={useAuth.isAuthenticated}>
+            <a href={item.url} target="_blank">
+              <T id={item.name} />
             </a>
           </FooterLinks>
-        </Col>
-        <Col xs="6" sm="2" md="4" lg="4" alignSelf="center" order="2">
-          <FooterLinks>
-            <a
-              href="https://yallacompare.com/insurance/uae/en/privacy-policy"
-              target="_blank"
-            >
-              <T id="FOOTER_LINKS_PRIVACY" />
-            </a>
-          </FooterLinks>
-        </Col>
-        <Col xs="6" sm="2" md="4" lg="4" alignSelf="center" order="3">
-          <FooterLinks>
-            <a
-              href="https://yallacompare.com/insurance/uae/en/disclaimer"
-              target="_blank"
-            >
-              <T id="FOOTER_LINKS_DISCLAIMER" />
-            </a>
-          </FooterLinks>
-        </Col>
-        <Col xs="12" sm="2" md="4" lg="4" alignSelf="center" order="4">
-          <FooterLinks>
-            <a
-              href="https://yallacompare.com/insurance/uae/en/contact-us"
-              target="_blank"
-            >
-              <T id="FOOTER_LINKS_CONTACT_COMPLAINTS" />
-            </a>
-          </FooterLinks>
-        </Col>
-        <Col xs="12" sm="2" md="4" lg="4" alignSelf="center" order="5">
-          <FooterLinks>
-            <a
-              href="https://yallacompare.com/insurance/uae/en/about-us"
-              target="_blank"
-            >
-              <T id="FOOTER_LINKS_ABOUT" />
-            </a>
-          </FooterLinks>
-        </Col>
-      </Row>
+        ))}
+      </FooterLinksWrapper>
       <Row>
         <Col xs="12" md="12">
           <FooterRights>

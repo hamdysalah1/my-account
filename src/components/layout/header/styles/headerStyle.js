@@ -5,10 +5,8 @@ import {
   BLACK_COLOR,
 } from '../../../../constants';
 
-const isHome =
-  window.location.pathname === '/en' || window.location.pathname === '/ar';
 export const HeadWrapper = styled.div`
-  margin: 20px 0;
+  margin: 20px 0 40px 0;
 `;
 export const UserName = styled.div`
   display: inline-block;
@@ -21,20 +19,23 @@ export const UserName = styled.div`
   line-height: 36px;
 `;
 export const Language = styled.div`
-  ${isHome
-    ? `
+  ${({ user }) =>
+    !user
+      ? `
       color: ${DEFAULT_COLOR};
       display: block;
       text-align: right;
+      font-size: 18px;
     `
-    : `color: ${BLACK_COLOR};`};
+      : `color: ${BLACK_COLOR};`};
 `;
 export const Menu = styled.div`
-  ${isHome
-    ? `
+  ${({ user }) =>
+    !user
+      ? `
     display: none;
   `
-    : `display: inline-block;
+      : `display: inline-block;
   font-size: 16px;
   font-weight: bold;
   display: flex;
@@ -44,17 +45,19 @@ export const Notification = styled.div`
   display: inline-block;
 `;
 export const YallaHomeLogoWrapper = styled.div`
-  ${isHome
-    ? `
-display: inline-block;
-`
-    : ` display: none`};
+  ${({ user }) =>
+    !user
+      ? `
+        display: inline-block;
+      `
+      : ` display: none`};
 `;
 
 export const YallaLogoWrapper = styled.div`
-  ${isHome
-    ? `
+  ${({ user }) =>
+    !user
+      ? `
 display: none;
 `
-    : ` display: inline-block`};
+      : ` display: inline-block`};
 `;
