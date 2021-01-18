@@ -6,6 +6,7 @@ import Header from './layout/header/header';
 import Hero from './hero/hero';
 import HomeForm from './homeForm/homeForm';
 import Button from './button/button';
+import T from './T';
 
 export {
   Card,
@@ -17,4 +18,5 @@ export {
   Hero,
   HomeForm,
   Button,
+  T,
 };

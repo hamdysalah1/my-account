@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
 
     font-weight: 300;
     font-size: 22px;
+    line-height: 1.4;
     ${({ lang }) =>
       lang === 'ar'
         ? `direction: rtl;font-family: 'Almarai', sans-serif;`

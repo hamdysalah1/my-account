@@ -36,6 +36,7 @@ const Home = () => {
         formTitle="LOGIN_TEXT"
         onSubmit={(e) => onSubmit(e)}
         serverMessage={error}
+        submitText="LOGIN_TEXT"
         afterLoop={
           <HomeForm.Actions linkTo={`/${params.lang}/${FORGOT_PASSWORD}`} />
         }

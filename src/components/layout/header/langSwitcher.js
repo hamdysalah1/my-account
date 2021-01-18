@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { Language } from './styles/headerStyle';
 import { GlobalContext } from '../../../context';
 import T from '../../T';
@@ -31,7 +31,7 @@ const LangSwitcher = () => {
     history.replace({ pathname });
   };
   return (
-    <Language onClick={() => setLang()}>
+    <Language lang={data.lang} onClick={() => setLang()}>
       <T id="LANG" />
     </Language>
   );

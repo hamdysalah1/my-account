@@ -33,6 +33,7 @@ const SignUp = () => {
         buttonText="LOGIN_TEXT"
         formTitle="SIGN_UP_TEXT"
         onSubmit={(e) => onSubmit(e)}
+        submitText="SIGN_UP_BTN_TEXT"
         serverMessage={error}
       />
       <Footer />
