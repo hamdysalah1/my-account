@@ -13,6 +13,7 @@ function AuthContainer({
   buttonText,
   serverMessage,
   afterLoop,
+  submitText,
 }) {
   return (
     <Container>
@@ -36,6 +37,7 @@ function AuthContainer({
                       onSubmit={onSubmit}
                       serverMessage={serverMessage}
                       afterLoop={afterLoop}
+                      submitText={submitText}
                     />
                   </HomeForm>
                 </Col>
@@ -50,6 +52,7 @@ function AuthContainer({
                   fields={formFields}
                   onSubmit={onSubmit}
                   afterLoop={afterLoop && <HomeForm.Actions />}
+                  submitText={submitText}
                 />
               </HomeForm>
             )}
@@ -63,6 +66,7 @@ function AuthContainer({
 AuthContainer.defaultProps = {
   serverMessage: '',
   afterLoop: <></>,
+  submitText: 'SUBMIT',
 };
 AuthContainer.propTypes = {
   formFields: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
@@ -73,6 +77,7 @@ AuthContainer.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   serverMessage: PropTypes.string,
   afterLoop: PropTypes.element,
+  submitText: PropTypes.string,
 };
 
 export default AuthContainer;

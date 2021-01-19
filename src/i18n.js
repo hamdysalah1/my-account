@@ -32,6 +32,8 @@ export const i18n = {
     FORGOT_PASSWORD_TEXT: 'استرجاع كلمه المرور',
     USERNAME: 'اسم المستخدم',
     FORGOT_PASSWORD: 'نسيت كلمه المرور؟',
+    SUBMIT: 'ارسال',
+    SIGN_UP_BTN_TEXT: 'تسجيل',
   },
   en: {
     MENU_TITLE: 'MENU',
@@ -65,5 +67,7 @@ export const i18n = {
     FORGOT_PASSWORD_TEXT: 'Forgot Password',
     USERNAME: 'Username',
     FORGOT_PASSWORD: 'Forgot Password?',
+    SUBMIT: 'Submit',
+    SIGN_UP_BTN_TEXT: 'Sign up',
   },
 };

@@ -5,6 +5,7 @@ import {
   DEFAULT_COLOR,
   BLACK_COLOR,
 } from '../../../../constants';
+import { textAlign } from '../../../../helper';
 
 export const HeadWrapper = styled.div`
   margin: 20px 0 40px 0;
@@ -21,12 +22,14 @@ export const UserName = styled.div`
 `;
 export const Language = styled.div`
   cursor: pointer;
+  ${textAlign('right')}
+  font-family: 'Almarai',sans-serif;
   ${({ user }) =>
     !user
       ? `
       color: ${DEFAULT_COLOR};
       display: block;
-      text-align: right;
+
       font-size: 18px;
       @media (max-width: ${xsMax}px) {
         color: ${BLACK_COLOR};

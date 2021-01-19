@@ -30,7 +30,7 @@ const SelectField = ({
       ref={rules}
     >
       <option value=""> -- Select -- </option>
-      {options.map((option, key) => (
+      {options.map((option) => (
         <option value={option[0]} key={`${option[0]}_${name}`}>
           {' '}
           {option[1]}{' '}
